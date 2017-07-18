@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		E14E5BCE1F1DE9E7000538F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BCD1F1DE9E7000538F9 /* AppDelegate.swift */; };
-		E14E5BD01F1DE9E7000538F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BCF1F1DE9E7000538F9 /* ViewController.swift */; };
+		E14E5BD01F1DE9E7000538F9 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */; };
 		E14E5BD31F1DE9E7000538F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14E5BD11F1DE9E7000538F9 /* Main.storyboard */; };
 		E14E5BD61F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BD41F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld */; };
 		E14E5BD81F1DE9E7000538F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14E5BD71F1DE9E7000538F9 /* Assets.xcassets */; };
 		E14E5BDB1F1DE9E7000538F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14E5BD91F1DE9E7000538F9 /* LaunchScreen.storyboard */; };
 		E14E5BE61F1DE9E8000538F9 /* OnlineCoachTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BE51F1DE9E8000538F9 /* OnlineCoachTests.swift */; };
 		E14E5BF11F1DE9E8000538F9 /* OnlineCoachUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BF01F1DE9E8000538F9 /* OnlineCoachUITests.swift */; };
+		E16A596B1F1E8280008A23A6 /* FoodDiariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A596A1F1E8280008A23A6 /* FoodDiariesViewController.swift */; };
+		E16A596D1F1E8290008A23A6 /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */; };
+		E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */; };
+		E16A59711F1E8E70008A23A6 /* CreateUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */; };
+		E16A59731F1E98BE008A23A6 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59721F1E98BE008A23A6 /* CreateUserViewController.swift */; };
+		E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,7 @@
 /* Begin PBXFileReference section */
 		E14E5BCA1F1DE9E7000538F9 /* OnlineCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E5BCD1F1DE9E7000538F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E14E5BCF1F1DE9E7000538F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		E14E5BD21F1DE9E7000538F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E14E5BD51F1DE9E7000538F9 /* OnlineCoach.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnlineCoach.xcdatamodel; sourceTree = "<group>"; };
 		E14E5BD71F1DE9E7000538F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		E14E5BEC1F1DE9E8000538F9 /* OnlineCoachUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineCoachUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E5BF01F1DE9E8000538F9 /* OnlineCoachUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineCoachUITests.swift; sourceTree = "<group>"; };
 		E14E5BF21F1DE9E8000538F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E16A596A1F1E8280008A23A6 /* FoodDiariesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDiariesViewController.swift; sourceTree = "<group>"; };
+		E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
+		E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
+		E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserPageViewController.swift; sourceTree = "<group>"; };
+		E16A59721F1E98BE008A23A6 /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				E14E5BCD1F1DE9E7000538F9 /* AppDelegate.swift */,
-				E14E5BCF1F1DE9E7000538F9 /* ViewController.swift */,
-				E14E5BD11F1DE9E7000538F9 /* Main.storyboard */,
-				E14E5BD71F1DE9E7000538F9 /* Assets.xcassets */,
-				E14E5BD91F1DE9E7000538F9 /* LaunchScreen.storyboard */,
+				E16A59781F1EC654008A23A6 /* Model */,
+				E16A59771F1EC637008A23A6 /* Views */,
+				E16A59761F1EC627008A23A6 /* ViewControllers */,
 				E14E5BDC1F1DE9E7000538F9 /* Info.plist */,
-				E14E5BD41F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld */,
 			);
 			path = OnlineCoach;
 			sourceTree = "<group>";
@@ -126,6 +136,38 @@
 				E14E5BF21F1DE9E8000538F9 /* Info.plist */,
 			);
 			path = OnlineCoachUITests;
+			sourceTree = "<group>";
+		};
+		E16A59761F1EC627008A23A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E16A596A1F1E8280008A23A6 /* FoodDiariesViewController.swift */,
+				E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */,
+				E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */,
+				E16A59721F1E98BE008A23A6 /* CreateUserViewController.swift */,
+				E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */,
+				E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */,
+				E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E16A59771F1EC637008A23A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E14E5BD91F1DE9E7000538F9 /* LaunchScreen.storyboard */,
+				E14E5BD11F1DE9E7000538F9 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E16A59781F1EC654008A23A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E14E5BD71F1DE9E7000538F9 /* Assets.xcassets */,
+				E14E5BD41F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +307,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16A596B1F1E8280008A23A6 /* FoodDiariesViewController.swift in Sources */,
 				E14E5BD61F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld in Sources */,
-				E14E5BD01F1DE9E7000538F9 /* ViewController.swift in Sources */,
+				E14E5BD01F1DE9E7000538F9 /* UserInformationViewController.swift in Sources */,
+				E16A59731F1E98BE008A23A6 /* CreateUserViewController.swift in Sources */,
+				E16A596D1F1E8290008A23A6 /* WorkoutsViewController.swift in Sources */,
+				E16A59711F1E8E70008A23A6 /* CreateUserPageViewController.swift in Sources */,
 				E14E5BCE1F1DE9E7000538F9 /* AppDelegate.swift in Sources */,
+				E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */,
+				E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +568,7 @@
 				E14E5BF71F1DE9E8000538F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E14E5BF81F1DE9E8000538F9 /* Build configuration list for PBXNativeTarget "OnlineCoachTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +577,7 @@
 				E14E5BFA1F1DE9E8000538F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E14E5BFB1F1DE9E8000538F9 /* Build configuration list for PBXNativeTarget "OnlineCoachUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +586,7 @@
 				E14E5BFD1F1DE9E8000538F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

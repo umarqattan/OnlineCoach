@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,312 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXT-by-LYv">
+                                <rect key="frame" x="16" y="173" width="343" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="U3A-IX-quK"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z3-RO-WHP">
+                                <rect key="frame" x="205" y="341" width="98" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Register Here!"/>
+                                <connections>
+                                    <segue destination="p8C-0l-a4Z" kind="show" id="Mof-3k-aiw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OnlineCoach" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yny-85-upA">
+                                <rect key="frame" x="136" y="28" width="103" height="24"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00l-0L-bbT">
+                                <rect key="frame" x="16" y="288" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Tcb-UB-ogo" kind="show" id="fee-Ay-cWP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New to OnlineCoach?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBl-ZZ-kUP">
+                                <rect key="frame" x="59" y="348" width="138" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RoF-qS-yyi">
+                                <rect key="frame" x="16" y="225" width="343" height="36"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="00l-0L-bbT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="288" id="ExQ-Rc-jGE"/>
+                            <constraint firstItem="WXT-by-LYv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="173" id="Gtx-no-nko"/>
+                            <constraint firstItem="RoF-qS-yyi" firstAttribute="top" secondItem="WXT-by-LYv" secondAttribute="bottom" constant="16" id="PCm-yX-4VZ"/>
+                            <constraint firstItem="yny-85-upA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="aIm-m7-z4D"/>
+                            <constraint firstItem="WXT-by-LYv" firstAttribute="trailing" secondItem="RoF-qS-yyi" secondAttribute="trailing" id="bfE-fx-B68"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Z3-RO-WHP" secondAttribute="trailing" constant="56" id="eAI-Q6-dbN"/>
+                            <constraint firstItem="iBl-ZZ-kUP" firstAttribute="top" secondItem="RoF-qS-yyi" secondAttribute="bottom" constant="87" id="fIV-RV-DRS"/>
+                            <constraint firstItem="3Z3-RO-WHP" firstAttribute="top" secondItem="00l-0L-bbT" secondAttribute="bottom" constant="23" id="gTn-St-6ky"/>
+                            <constraint firstItem="3Z3-RO-WHP" firstAttribute="top" secondItem="RoF-qS-yyi" secondAttribute="bottom" constant="80" id="htm-nd-tBF"/>
+                            <constraint firstItem="RoF-qS-yyi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="iFY-0e-8HP"/>
+                            <constraint firstItem="3Z3-RO-WHP" firstAttribute="leading" secondItem="iBl-ZZ-kUP" secondAttribute="trailing" constant="8" id="jOU-YS-iKE"/>
+                            <constraint firstItem="RoF-qS-yyi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="k9k-f0-QLI"/>
+                            <constraint firstItem="3Z3-RO-WHP" firstAttribute="top" secondItem="RoF-qS-yyi" secondAttribute="bottom" constant="80" id="lU2-dG-cfG"/>
+                            <constraint firstItem="WXT-by-LYv" firstAttribute="trailing" secondItem="00l-0L-bbT" secondAttribute="trailing" id="mXA-YJ-NJB"/>
+                            <constraint firstItem="00l-0L-bbT" firstAttribute="leading" secondItem="RoF-qS-yyi" secondAttribute="leading" id="mkw-jy-sR7"/>
+                            <constraint firstItem="3Z3-RO-WHP" firstAttribute="leading" secondItem="iBl-ZZ-kUP" secondAttribute="trailing" constant="8" id="oi9-3r-Y2m"/>
+                            <constraint firstItem="00l-0L-bbT" firstAttribute="top" secondItem="RoF-qS-yyi" secondAttribute="bottom" constant="27" id="p8u-0H-crf"/>
+                            <constraint firstItem="WXT-by-LYv" firstAttribute="leading" secondItem="RoF-qS-yyi" secondAttribute="leading" id="q2Q-qA-Rlt"/>
+                            <constraint firstItem="yny-85-upA" firstAttribute="centerX" secondItem="00l-0L-bbT" secondAttribute="centerX" id="qAA-L5-19R"/>
+                            <constraint firstItem="iBl-ZZ-kUP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="43" id="v5R-cl-xcD"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WSU-0x-rYB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-303.19999999999999" y="124.58770614692655"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Hd-qp-6A2">
+            <objects>
+                <navigationController id="p8C-0l-a4Z" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rAY-Qn-zqp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j65-WQ-Vwf" kind="relationship" relationship="rootViewController" id="p0h-OX-peQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsa-vK-tJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="-496"/>
+        </scene>
+        <!--Create User-->
+        <scene sceneID="bIp-u7-jBR">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="j65-WQ-Vwf" customClass="CreateUserPageViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Create User" id="7eR-G9-LxU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KXY-KX-W5w">
+                            <connections>
+                                <action selector="cancel:" destination="j65-WQ-Vwf" id="J0M-zn-Duz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IUf-Xo-fws" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="-496"/>
+        </scene>
+        <!--User Information View Controller-->
+        <scene sceneID="gtY-y5-6lI">
+            <objects>
+                <viewController storyboardIdentifier="UserInformationViewController" id="o3q-O2-RQ0" customClass="UserInformationViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xHZ-VO-J60"/>
+                        <viewControllerLayoutGuide type="bottom" id="R7A-yi-dzH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WOk-e5-QDn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyz-rz-djt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2079" y="-496"/>
+        </scene>
+        <!--Workouts-->
+        <scene sceneID="zky-Mw-9Re">
+            <objects>
+                <viewController id="RN1-Gd-58c" customClass="WorkoutsViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gK5-Yk-ATC"/>
+                        <viewControllerLayoutGuide type="bottom" id="mRj-aZ-ffW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wgV-jx-HX4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Workouts" image="icons8-Dumbbell Filled-32" selectedImage="icons8-Dumbbell Filled-32" id="amf-uq-ete"/>
+                    <navigationItem key="navigationItem" id="r8c-du-Lkr">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tUK-ag-1Rp">
+                            <connections>
+                                <action selector="logout:" destination="RN1-Gd-58c" id="W54-55-bQk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMu-oo-YTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2620" y="1146"/>
+        </scene>
+        <!--Food Diary-->
+        <scene sceneID="NMl-iE-CtN">
+            <objects>
+                <viewController id="Zg6-ky-Vqd" customClass="FoodDiariesViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QAZ-4u-4za"/>
+                        <viewControllerLayoutGuide type="bottom" id="z9y-GJ-mz0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5wg-BV-GAa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Food Diary" image="icons8-Vegan Food Filled-32" selectedImage="icons8-Vegan Food Filled-32" id="wbQ-Ht-ETo"/>
+                    <navigationItem key="navigationItem" id="God-7k-fuY">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="ibU-JP-5gw">
+                            <connections>
+                                <action selector="logout:" destination="Zg6-ky-Vqd" id="QBf-5R-Qws"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duP-OY-yPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2620" y="478"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="1Qq-t6-OJL">
+            <objects>
+                <tabBarController id="Tcb-UB-ogo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VVA-QW-lJp"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Qyk-Tq-T30">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fyH-I3-zcY" kind="relationship" relationship="viewControllers" id="CZJ-li-IyG"/>
+                        <segue destination="JDO-SV-dPG" kind="relationship" relationship="viewControllers" id="YMc-Hm-YMo"/>
+                        <segue destination="1hO-f4-xmh" kind="relationship" relationship="viewControllers" id="5Kz-qw-QgU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8S-1s-0k8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="436" y="901"/>
+        </scene>
+        <!--Food Diary-->
+        <scene sceneID="o35-hJ-X5e">
+            <objects>
+                <navigationController id="fyH-I3-zcY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Food Diary" image="icons8-Vegan Food-32" selectedImage="icons8-Vegan Food-32" id="xkp-VH-Orq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jNr-8W-8Hv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Zg6-ky-Vqd" kind="relationship" relationship="rootViewController" id="K15-dq-FaM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="62S-2x-rXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="479"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="H80-zi-Jww">
+            <objects>
+                <navigationController id="1hO-f4-xmh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="icons8-Settings-32" selectedImage="icons8-Settings-32" id="ek1-ra-fdN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vmi-HE-NB4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6Q0-c1-vVs" kind="relationship" relationship="rootViewController" id="wsh-ZU-nce"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ng-cx-PiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="1914"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="1kR-CX-kbE">
+            <objects>
+                <viewController id="6Q0-c1-vVs" customClass="SettingsViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="df2-2n-Xve"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fe-X7-UKP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fmb-IG-xKD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lpt-Gw-dCc">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="eGh-Vy-EDZ">
+                            <connections>
+                                <action selector="logout:" destination="6Q0-c1-vVs" id="4qk-pb-tTp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vPc-rF-x0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2620" y="1914"/>
+        </scene>
+        <!--Workouts-->
+        <scene sceneID="qyX-37-437">
+            <objects>
+                <navigationController id="JDO-SV-dPG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Workouts" image="icons8-Dumbbell-32" selectedImage="icons8-Dumbbell-32" id="rMG-jU-Q4G"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aX1-4A-40E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RN1-Gd-58c" kind="relationship" relationship="rootViewController" id="FVD-WH-Unj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jq5-Ka-Yos" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="1147"/>
+        </scene>
+        <!--Body Information View Controller-->
+        <scene sceneID="hII-bp-1Va">
+            <objects>
+                <viewController storyboardIdentifier="BodyInformationViewController" id="Sc2-yS-D1U" customClass="BodyInformationViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nti-7T-lEz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kio-8p-boC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sxw-kW-U0s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31G-iP-72a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2975" y="-496"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-Dumbbell Filled-32" width="32" height="32"/>
+        <image name="icons8-Dumbbell-32" width="32" height="32"/>
+        <image name="icons8-Settings-32" width="32" height="32"/>
+        <image name="icons8-Vegan Food Filled-32" width="32" height="32"/>
+        <image name="icons8-Vegan Food-32" width="32" height="32"/>
+    </resources>
 </document>
