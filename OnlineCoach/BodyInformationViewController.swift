@@ -11,13 +11,42 @@ import UIKit
 class BodyInformationViewController: CreateUserViewController {
 
     
- 
+    @IBOutlet weak var heightField: UITextField!
+    
+    @IBOutlet weak var weightField: UITextField!
+    
+    @IBOutlet weak var unitSwitch: UISwitch!
+    
+    @IBOutlet weak var bodyNextButton: UIButton!
+    
+    var unitSwitchHasChanged:Bool = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         index = 1
+        setupUI()
+        navigationItem.title = "Body Information"
         // Do any additional setup after loading the view.
     }
 
+    override func setupUI() {
+        heightField.delegate = self
+        weightField.delegate = self
+        bodyNextButton.isEnabled = false
+    }
+    
+    override func updateTextfieldsList() {
+        if heightField.text != "" && weightField.text != "" &&  unitSwitchHasChanged {
+            bodyNextButton.isEnabled = true
+        }
+    }
+    
+    @IBAction func unitChange(_ sender: UISwitch) {
+        if unitSwitchHasChanged == false {
+            unitSwitchHasChanged = true
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -26,11 +55,10 @@ class BodyInformationViewController: CreateUserViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+    @IBAction override func next(_ sender: UIButton) {
+        // TODO: 
+        
     }
-    
 
     /*
     // MARK: - Navigation

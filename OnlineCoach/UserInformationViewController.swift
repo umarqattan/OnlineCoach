@@ -17,6 +17,8 @@ class UserInformationViewController: CreateUserViewController {
         super.viewDidLoad()
         
         index = 0
+        
+        navigationItem.title = "User Information"
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -66,6 +66,8 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
     
         let viewController = storyBoard.instantiateViewController(withIdentifier: identifiers[index])
         
+        
+        
         return viewController as? CreateUserViewController
     }
     
@@ -105,17 +107,13 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
             return nil
         }
         
-        index -= 1
-        return viewControllerAtIndex(index: index)
         
-//        var index = indexOfViewController(viewController: viewController as! CreateUserViewController)
-//        
-//        if index == 0 || index == NSNotFound {
-//            return nil
-//        }
-//        
-//        index -= 1
-//        return viewControllerAtIndex(index: index)
+        
+        index -= 1
+        
+        
+        return viewControllerAtIndex(index: index)
+
     }
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
