@@ -8,58 +8,99 @@
 
 import UIKit
 
-class BodyInformationViewController: CreateUserViewController {
+class BodyInformationViewController: UIViewController, UITextFieldDelegate {
 
-    
-    @IBOutlet weak var heightField: UITextField!
+  
+    let index = 1
     
     @IBOutlet weak var weightField: UITextField!
-    
+    @IBOutlet weak var heightField: UITextField!
     @IBOutlet weak var unitSwitch: UISwitch!
+    @IBOutlet weak var nextButton: UIButton!
     
-    @IBOutlet weak var bodyNextButton: UIButton!
     
     var unitSwitchHasChanged:Bool = false
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        index = 1
+        
         setupUI()
+        
         navigationItem.title = "Body Information"
         // Do any additional setup after loading the view.
     }
 
-    override func setupUI() {
-        heightField.delegate = self
-        weightField.delegate = self
-        bodyNextButton.isEnabled = false
+    
+    
+    
+
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
-    override func updateTextfieldsList() {
-        if heightField.text != "" && weightField.text != "" &&  unitSwitchHasChanged {
-            bodyNextButton.isEnabled = true
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // UI Helper functions
+    func setupUI() {
+        weightField.delegate = self
+        heightField.delegate = self
+        nextButton.isEnabled = false
+    }
+    
+    func enableNextButton() {
+        if weightField.text != nil && heightField.text != nil && unitSwitchHasChanged {
+            nextButton.isEnabled = true
         }
     }
     
-    @IBAction func unitChange(_ sender: UISwitch) {
+    
+    // UITextFieldDelegate Methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        enableNextButton()
+        
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        enableNextButton()
+        
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        
+        enableNextButton()
+        
+
+    }
+    
+    // Pragma: IBActions
+    
+    @IBAction func unitSwitchChange(_ sender: UISwitch) {
         if unitSwitchHasChanged == false {
             unitSwitchHasChanged = true
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    @IBAction func next(_ sender: UIButton) {
+        
+        print("SUCCESSFULLY FILLED OUT BODY INFORMATION!")
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    @IBAction override func next(_ sender: UIButton) {
-        // TODO: 
-        
-    }
-
+    
+    
+    
     /*
     // MARK: - Navigation
 

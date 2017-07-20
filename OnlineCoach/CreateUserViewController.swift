@@ -10,34 +10,35 @@ import UIKit
 
 class CreateUserViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var firstNameField: UITextField!
-    @IBOutlet weak var lastNameField: UITextField!
-    @IBOutlet weak var emailAddressField: UITextField!
-    @IBOutlet weak var phoneNumberField: UITextField!
-    @IBOutlet weak var roleSwitch: UISwitch!
-    @IBOutlet weak var nextButton: UIButton!
+    // UserInformationViewController
+    
+    // BodyInformationViewController
+        
+//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//    var newUser:NewUser!
+//    var newUserData:[String:Any]?
     
     
-    
-    var switchHasChanged:Bool = false
-    var textFieldsHaveBeenModified:[Bool] = [false, false, false, false]
     var index:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        setupUI()
+       // setupUIUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupUI()
+        setupUIUser()
+        
     }
     
     
@@ -50,47 +51,90 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func setupUI() {
+    func setupUIUser() {
         firstNameField.delegate = self
         lastNameField.delegate = self
         emailAddressField.delegate = self
         phoneNumberField.delegate = self
-        nextButton.isEnabled = false
+        //nextButton1.isEnabled = false
     }
     
+    func setupUIBody() {
+        weightField.delegate = self
+        heightField.delegate = self
+        //nextButton2.isEnabled = false
+    }
     
     
     @IBAction func next(_ sender: UIButton) {
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let user = User(context: context)
-        user.firstName = firstNameField.text
-        user.lastName = lastNameField.text
-        user.emailAddress = emailAddressField.text
-        user.phoneNumber = phoneNumberField.text
-        user.isCoach = roleSwitch.isOn ? true : false
-        user.isClient = roleSwitch.isOn ? false : true
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        if firstNameField.text != "" && lastNameField.text != "" && emailAddressField.text != "" && phoneNumberField.text != "" && roleSwitchHasChanged{
+            
+                        
+            
+            
+
+        } else {
+            print("ERROR YOU DIDN'T COMPELTE THE USER FORM!")
+        }
         
-        print(user.description)
+        
         
         // TODO: Add delegate to tell the CreateUserPageViewController to 
         //       scroll the UserInformationViewController page to the
         //       BodyInformationViewController page.
     }
+    @IBAction func next2(_ sender: UIButton) {
+        guard var newUserData = newUserData else {
+            fatalError("Where is the new user data")
+
+        }
+        
+        if weightField.text != "" && heightField.text != "" && unitSwitchHasChanged {
+            
+            newUserData["weight"] = weightField.text ?? ""
+            newUserData["height"] = heightField.text ?? ""
+            newUserData["unit"] = unitSwitch.isOn ? "SI" : "Metric"
+            
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            //var user = User(data: newUserData)
+            
+            
+            //(UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            //print(user.description)
+            
+        } else {
+            print("ERROR YOU DIDN'T COMPELTE THE BODY FORM!")
+        }
+        
+    }
     
     @IBAction func roleSwitchChange(_ sender: UISwitch) {
-        if switchHasChanged == false {
-            switchHasChanged = true
+        if roleSwitchHasChanged == false {
+            roleSwitchHasChanged = true
         }
         
     }
 
-    func updateTextfieldsList() {
-        if firstNameField.text != "" && lastNameField.text != "" && emailAddressField.text != "" && phoneNumberField.text != "" && switchHasChanged{
-            nextButton.isEnabled = true
+    @IBAction func unitSwitchChange(_ sender: UISwitch) {
+        if unitSwitchHasChanged == false {
+            unitSwitchHasChanged = true
         }
     }
+    
+//    func updateTextfieldsList() {
+//        if firstNameField.text != "" && lastNameField.text != "" && emailAddressField.text != "" && phoneNumberField.text != "" && roleSwitchHasChanged{
+//            nextButton1.isEnabled = true
+//        }
+//    }
+//    
+//    func updateTextfieldsList2() {
+//        if weightField.text != "" && heightField.text != "" && unitSwitchHasChanged {
+//            nextButton2.isEnabled = true
+//        }
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -103,9 +147,10 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
     
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.resignFirstResponder()
         
-        updateTextfieldsList()
+        
+        textField.resignFirstResponder()
+        return
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -113,18 +158,8 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+
     
-    
-    func checkIfAllTextfieldsHaveBeenChanged() -> Bool {
-        for textFieldBool in textFieldsHaveBeenModified {
-            if textFieldBool == false {
-                return false
-            }
-        }
-        return true
-    }
-    
-    /*
      
     // MARK: - Navigation
 
@@ -132,7 +167,12 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let destinationViewController = segue.destination as? CreateUserViewController {
+           destinationViewController.newUserData = newUserData
+        }
+        
+        
     }
-    */
+ 
 
 }

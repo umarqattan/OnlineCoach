@@ -53,10 +53,10 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor.gray
         appearance.currentPageIndicatorTintColor = UIColor.white
-        //appearance.backgroundColor = UIColor.darkGray
+        appearance.backgroundColor = UIColor.darkGray
     }
     
-    func viewControllerAtIndex(index: Int) -> CreateUserViewController? {
+    func viewControllerAtIndex(index: Int) -> UIViewController? {
         
         if identifiers.count == 0 || index >= identifiers.count {
             return nil
@@ -68,27 +68,26 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
         
         
         
-        return viewController as? CreateUserViewController
+        return viewController
     }
     
-    func indexOfViewController(viewController: UIViewController?) -> Int {
-        
-        if let vc = viewController as? CreateUserViewController {
-            return vc.index
-        } else {
-            return NSNotFound
-        }
-        
-    }
+   
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        let createUser:CreateUserViewController = viewController as! CreateUserViewController
+        let vc1 = viewControllerAtIndex(index: 0) as? UserInformationViewController
+        let vc2 = viewControllerAtIndex(index: 1) as? BodyInformationViewController
+        var index:Int = 0
         
-        var index = createUser.index
-        if index == NSNotFound {
+        if viewController == vc1 {
+            
+            index = (vc1?.index)!
+        } else if viewController == vc2 {
+            index = (vc2?.index)!
+        } else {
             return nil
         }
+    
         index += 1
         
         if index == identifiers.count {
@@ -101,16 +100,24 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        let createUser:CreateUserViewController = viewController as! CreateUserViewController
-        var index = createUser.index
+        let vc1 = viewControllerAtIndex(index: 0) as? UserInformationViewController
+        let vc2 = viewControllerAtIndex(index: 1) as? BodyInformationViewController
+        var index:Int = 0
+        
+        if viewController == vc1 {
+            index = (vc1?.index)!
+        } else if viewController == vc2 {
+            index = (vc2?.index)!
+        } else {
+            return nil
+        }
+
+        
         if index == 0 || index == NSNotFound {
             return nil
         }
-        
-        
-        
+    
         index -= 1
-        
         
         return viewControllerAtIndex(index: index)
 

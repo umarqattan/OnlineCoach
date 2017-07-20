@@ -132,6 +132,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ltm-LD-JWO"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="o3q-O2-RQ0" kind="show" id="cA8-yV-dFa"/>
+                    </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUf-Xo-fws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,7 +183,7 @@
                                 <rect key="frame" x="163" y="294" width="51" height="31"/>
                                 <color key="onTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="roleSwitchChange:" destination="o3q-O2-RQ0" eventType="valueChanged" id="DXU-OT-Q5L"/>
+                                    <action selector="roleSwitchChange:" destination="o3q-O2-RQ0" eventType="valueChanged" id="tTG-BV-0bl"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coach" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvB-Nd-xSR">
@@ -208,8 +211,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="next:" destination="o3q-O2-RQ0" eventType="touchUpInside" id="O0f-PL-5jJ"/>
-                                    <segue destination="Sc2-yS-D1U" kind="show" id="tDY-s9-rxW"/>
+                                    <action selector="next:" destination="o3q-O2-RQ0" eventType="touchUpInside" id="Fjr-za-MM4"/>
+                                    <segue destination="Sc2-yS-D1U" kind="show" id="QOw-sy-vzM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -240,12 +243,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailAddressField" destination="SSa-se-b3W" id="FiV-Ga-RQn"/>
-                        <outlet property="firstNameField" destination="B8M-kI-I6g" id="QfS-en-27h"/>
-                        <outlet property="lastNameField" destination="haP-2o-GCY" id="Raa-21-3oy"/>
-                        <outlet property="nextButton" destination="IeH-cj-afb" id="bu0-Ou-3Y6"/>
-                        <outlet property="phoneNumberField" destination="L1d-Q8-hUr" id="7zO-KY-QtP"/>
-                        <outlet property="roleSwitch" destination="yif-Ed-uie" id="b0J-gA-Rke"/>
+                        <outlet property="emailAddressField" destination="SSa-se-b3W" id="RSQ-8s-pIE"/>
+                        <outlet property="firstNameField" destination="B8M-kI-I6g" id="eNX-Ou-KdU"/>
+                        <outlet property="lastNameField" destination="haP-2o-GCY" id="Xrm-x2-kEQ"/>
+                        <outlet property="nextButton" destination="IeH-cj-afb" id="GIP-H9-dSJ"/>
+                        <outlet property="phoneNumberField" destination="L1d-Q8-hUr" id="AAa-Z8-teM"/>
+                        <outlet property="roleSwitch" destination="yif-Ed-uie" id="acV-Mf-CcA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyz-rz-djt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,7 +432,7 @@
                                 <rect key="frame" x="172" y="221" width="51" height="31"/>
                                 <color key="onTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="unitChange:" destination="Sc2-yS-D1U" eventType="valueChanged" id="CdJ-QF-Gel"/>
+                                    <action selector="unitSwitchChange:" destination="Sc2-yS-D1U" eventType="valueChanged" id="h6t-9t-lGG"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-wG-Hdt">
@@ -451,7 +454,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="next:" destination="Sc2-yS-D1U" eventType="touchUpInside" id="bVW-GU-xq4"/>
+                                    <action selector="next:" destination="Sc2-yS-D1U" eventType="touchUpInside" id="Oie-da-8zv"/>
                                     <segue destination="sW2-7b-fDM" kind="show" id="5dV-rn-1Gd"/>
                                 </connections>
                             </button>
@@ -483,11 +486,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bodyNextButton" destination="pC2-JK-q5a" id="VyT-If-TIH"/>
-                        <outlet property="heightField" destination="o7L-Tg-KCS" id="BNd-U7-qEj"/>
-                        <outlet property="nextButton" destination="pC2-JK-q5a" id="tTE-11-duQ"/>
-                        <outlet property="unitSwitch" destination="Vo5-YO-odi" id="yIp-R1-MLg"/>
-                        <outlet property="weightField" destination="ETs-mu-qSF" id="tj9-e1-yYb"/>
+                        <outlet property="heightField" destination="o7L-Tg-KCS" id="JEX-dQ-GGx"/>
+                        <outlet property="nextButton" destination="pC2-JK-q5a" id="lug-lE-439"/>
+                        <outlet property="unitSwitch" destination="Vo5-YO-odi" id="97p-bP-UIf"/>
+                        <outlet property="weightField" destination="ETs-mu-qSF" id="dVn-mj-qDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31G-iP-72a" userLabel="First Responder" sceneMemberID="firstResponder"/>

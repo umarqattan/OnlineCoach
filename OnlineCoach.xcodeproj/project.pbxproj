@@ -19,8 +19,8 @@
 		E16A596D1F1E8290008A23A6 /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */; };
 		E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */; };
 		E16A59711F1E8E70008A23A6 /* CreateUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */; };
-		E16A59731F1E98BE008A23A6 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59721F1E98BE008A23A6 /* CreateUserViewController.swift */; };
 		E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */; };
+		E1C271871F200601006129F4 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C271861F200601006129F4 /* NewUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +59,8 @@
 		E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
 		E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
 		E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserPageViewController.swift; sourceTree = "<group>"; };
-		E16A59721F1E98BE008A23A6 /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E1C271861F200601006129F4 /* NewUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,13 +141,12 @@
 		E16A59761F1EC627008A23A6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E16A596A1F1E8280008A23A6 /* FoodDiariesViewController.swift */,
-				E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */,
-				E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */,
-				E16A59721F1E98BE008A23A6 /* CreateUserViewController.swift */,
+				E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */,
 				E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */,
 				E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */,
-				E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */,
+				E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */,
+				E16A596A1F1E8280008A23A6 /* FoodDiariesViewController.swift */,
+				E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -166,6 +165,7 @@
 			children = (
 				E14E5BD71F1DE9E7000538F9 /* Assets.xcassets */,
 				E14E5BD41F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld */,
+				E1C271861F200601006129F4 /* NewUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -310,11 +310,11 @@
 				E16A596B1F1E8280008A23A6 /* FoodDiariesViewController.swift in Sources */,
 				E14E5BD61F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld in Sources */,
 				E14E5BD01F1DE9E7000538F9 /* UserInformationViewController.swift in Sources */,
-				E16A59731F1E98BE008A23A6 /* CreateUserViewController.swift in Sources */,
 				E16A596D1F1E8290008A23A6 /* WorkoutsViewController.swift in Sources */,
 				E16A59711F1E8E70008A23A6 /* CreateUserPageViewController.swift in Sources */,
 				E14E5BCE1F1DE9E7000538F9 /* AppDelegate.swift in Sources */,
 				E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */,
+				E1C271871F200601006129F4 /* NewUser.swift in Sources */,
 				E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
