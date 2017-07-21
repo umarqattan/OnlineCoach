@@ -22,11 +22,17 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
         
         
         
-        setViewControllers([viewControllerAtIndex(index: 0)!], direction: .forward, animated: true, completion: nil)
+        
         
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setViewControllers([viewControllerAtIndex(index: 0)!], direction: .forward, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -136,12 +142,6 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
 
     }
     
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return identifiers.count
-    }
     
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 0
-    }
-    
+        
 }

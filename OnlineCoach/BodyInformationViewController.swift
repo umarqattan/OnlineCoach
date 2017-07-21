@@ -101,7 +101,15 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
         
         print("SUCCESSFULLY FILLED OUT BODY INFORMATION!")
         let parentVC = parent as! CreateUserPageViewController
+        
+        
         let vc = parentVC.viewControllerAtIndex(index: 2) as! GoalsInformationViewController
+        
+        data?["weight"] = Float(weightField.text!)
+        data?["height"] = heightField.text
+        data?["age"] = Int16(ageField.text!)
+        data?["unit"] = unitSwitch.isOn ? "SI" : "Metric"
+        
         vc.data = data
         parentVC.setViewControllers([vc], direction: .forward, animated: true,
                                     completion: nil)
