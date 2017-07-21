@@ -101,9 +101,10 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
         
         print("SUCCESSFULLY FILLED OUT BODY INFORMATION!")
         let parentVC = parent as! CreateUserPageViewController
-        
-        //parentVC.setViewControllers([parentVC.viewControllerAtIndex(index: 2)!], direction: .forward, animated: true,
-                                    //completion: nil)
+        let vc = parentVC.viewControllerAtIndex(index: 2) as! GoalsInformationViewController
+        vc.data = data
+        parentVC.setViewControllers([vc], direction: .forward, animated: true,
+                                    completion: nil)
     }
     
     

@@ -80,6 +80,8 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func next(_ sender: UIButton) {
         let registeredVC = storyboard?.instantiateViewController(withIdentifier: "RegisteredViewController") as! RegisteredViewController
+        data?["goal"] = goalControl.titleForSegment(at: goalControl.selectedSegmentIndex)
+        registeredVC.data = data
         navigationController?.pushViewController(registeredVC, animated: true)
     }
    

@@ -120,22 +120,25 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         data = [
         "firstName" : firstNameField.text ?? "",
         "lastName" : lastNameField.text ?? "",
-        "age" : 0,
+        "age" : Int16(0),
         "emailAddress" : emailAddressField.text ?? "" ,
         "phoneNumber" : phoneNumberField.text ?? "",
         "isCoach" : roleSwitch.isOn ? true : false,
         "isClient" : roleSwitch.isOn ? false : true,
-        "weight" : 0.00,
+        "weight" : Float(0),
         "height" : "",
         "unit" : "Metric",
         "goal" : "Shred"
         ]
 
+        let vc = parentVC.viewControllerAtIndex(index: 1) as! BodyInformationViewController
+        vc.data = data
+        parentVC.setViewControllers([vc], direction: .forward, animated: true,
+                                    completion: nil)
+
         
         
-        
-       // parentVC.setViewControllers([parentVC.viewControllerAtIndex(index: 1)!], direction: .forward, animated: true,
-             //completion: nil)
+       
         
         
     }

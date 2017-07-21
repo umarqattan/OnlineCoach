@@ -40,8 +40,8 @@ class User: NSManagedObject {
         isClient = data?["isClient"] as! Bool
         isCoach = data?["isCoach"] as! Bool
         height = data?["height"] as? String
-        weight = data?["weight"] as! Float
-        age = data?["age"] as! Int16
+        weight = (data?["weight"] as? Float)!
+        age = (data?["age"] as? Int16)!
         unit = data?["unit"] as? String
         goal = data?["goal"] as? String
         
