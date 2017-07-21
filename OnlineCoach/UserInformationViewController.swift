@@ -15,26 +15,17 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
+    
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var roleSwitch: UISwitch!
     @IBOutlet weak var nextButton: UIButton!
     
+    var data:[String:Any]?
     
     
     
-//    newUserData = [
-//    "firstName" : firstNameField.text ?? "",
-//    "lastName" : lastNameField.text ?? "",
-//    "emailAddress" : emailAddressField.text ?? "" ,
-//    "phoneNumber" : phoneNumberField.text ?? "",
-//    "isCoach" : roleSwitch.isOn ? true : false,
-//    "isClient" : roleSwitch.isOn ? false : true,
-//    "weight" : "0.00",
-//    "height" : "",
-//    "unit" : "Metric"
-//    ]
-
+    
     
     
     var roleSwitchHasChanged:Bool = false
@@ -45,8 +36,15 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         
         
         setupUI()
-        navigationItem.title = "User Information"
+        //parent?.navigationItem.title = "User Information"
+        //navigationItem.title = "User Information"
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        parent?.navigationItem.title = "User Information"
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +60,11 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         emailAddressField.delegate = self
         phoneNumberField.delegate = self
         nextButton.isEnabled = false
+        
+        
+        
+        
+        
     }
     
     func enableNextButton() {
@@ -112,11 +115,56 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func next(_ sender: UIButton) {
         print("SUCCESSFULLY FILLED OUT USER INFORMATION!")
         
+        let parentVC = parent as! CreateUserPageViewController
+        
+        data = [
+        "firstName" : firstNameField.text ?? "",
+        "lastName" : lastNameField.text ?? "",
+        "age" : 0,
+        "emailAddress" : emailAddressField.text ?? "" ,
+        "phoneNumber" : phoneNumberField.text ?? "",
+        "isCoach" : roleSwitch.isOn ? true : false,
+        "isClient" : roleSwitch.isOn ? false : true,
+        "weight" : 0.00,
+        "height" : "",
+        "unit" : "Metric",
+        "goal" : "Shred"
+        ]
+
+        
+        
+        
+       // parentVC.setViewControllers([parentVC.viewControllerAtIndex(index: 1)!], direction: .forward, animated: true,
+             //completion: nil)
+        
+        
     }
     
     @IBAction func roleSwitchChange(_ sender: UISwitch) {
         if roleSwitchHasChanged == false {
             roleSwitchHasChanged = true
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? BodyInformationViewController {
+            
+            data = [
+                "firstName" : firstNameField.text ?? "",
+                "lastName" : lastNameField.text ?? "",
+                "age" : 0,
+                "emailAddress" : emailAddressField.text ?? "" ,
+                "phoneNumber" : phoneNumberField.text ?? "",
+                "isCoach" : roleSwitch.isOn ? true : false,
+                "isClient" : roleSwitch.isOn ? false : true,
+                "weight" : 0.00,
+                "height" : "",
+                "unit" : "",
+                "goal" : ""
+            ]
+            
+            vc.data = data
         }
     }
     

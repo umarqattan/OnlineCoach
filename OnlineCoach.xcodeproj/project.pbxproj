@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E136B05C1F2194AC00B0FF9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136B05B1F2194AC00B0FF9D /* User.swift */; };
 		E14E5BCE1F1DE9E7000538F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BCD1F1DE9E7000538F9 /* AppDelegate.swift */; };
 		E14E5BD01F1DE9E7000538F9 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */; };
 		E14E5BD31F1DE9E7000538F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14E5BD11F1DE9E7000538F9 /* Main.storyboard */; };
@@ -20,7 +21,8 @@
 		E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */; };
 		E16A59711F1E8E70008A23A6 /* CreateUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */; };
 		E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */; };
-		E1C271871F200601006129F4 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C271861F200601006129F4 /* NewUser.swift */; };
+		E1F26D821F213EBD001E87BB /* GoalsInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */; };
+		E1F26D841F216A14001E87BB /* RegisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D831F216A14001E87BB /* RegisteredViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E136B05B1F2194AC00B0FF9D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E14E5BCA1F1DE9E7000538F9 /* OnlineCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E5BCD1F1DE9E7000538F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +63,8 @@
 		E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
 		E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserPageViewController.swift; sourceTree = "<group>"; };
 		E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		E1C271861F200601006129F4 /* NewUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
+		E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsInformationViewController.swift; sourceTree = "<group>"; };
+		E1F26D831F216A14001E87BB /* RegisteredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteredViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 				E16A59701F1E8E70008A23A6 /* CreateUserPageViewController.swift */,
 				E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */,
 				E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */,
+				E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */,
+				E1F26D831F216A14001E87BB /* RegisteredViewController.swift */,
 				E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */,
 				E16A596A1F1E8280008A23A6 /* FoodDiariesViewController.swift */,
 				E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */,
@@ -165,7 +171,7 @@
 			children = (
 				E14E5BD71F1DE9E7000538F9 /* Assets.xcassets */,
 				E14E5BD41F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld */,
-				E1C271861F200601006129F4 /* NewUser.swift */,
+				E136B05B1F2194AC00B0FF9D /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -309,12 +315,14 @@
 			files = (
 				E16A596B1F1E8280008A23A6 /* FoodDiariesViewController.swift in Sources */,
 				E14E5BD61F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld in Sources */,
+				E1F26D841F216A14001E87BB /* RegisteredViewController.swift in Sources */,
+				E1F26D821F213EBD001E87BB /* GoalsInformationViewController.swift in Sources */,
 				E14E5BD01F1DE9E7000538F9 /* UserInformationViewController.swift in Sources */,
 				E16A596D1F1E8290008A23A6 /* WorkoutsViewController.swift in Sources */,
 				E16A59711F1E8E70008A23A6 /* CreateUserPageViewController.swift in Sources */,
 				E14E5BCE1F1DE9E7000538F9 /* AppDelegate.swift in Sources */,
+				E136B05C1F2194AC00B0FF9D /* User.swift in Sources */,
 				E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */,
-				E1C271871F200601006129F4 /* NewUser.swift in Sources */,
 				E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

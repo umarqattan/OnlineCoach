@@ -13,14 +13,17 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
   
     let index = 1
     
-    @IBOutlet weak var weightField: UITextField!
+    
     @IBOutlet weak var heightField: UITextField!
+    @IBOutlet weak var weightField: UITextField!
+    @IBOutlet weak var ageField: UITextField!
     @IBOutlet weak var unitSwitch: UISwitch!
     @IBOutlet weak var nextButton: UIButton!
     
     
+    
     var unitSwitchHasChanged:Bool = false
-
+    var data:[String:Any]?
     
     
     override func viewDidLoad() {
@@ -28,16 +31,14 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
         
         setupUI()
         
-        navigationItem.title = "Body Information"
+        
+        //parent?.navigationItem.title = "Body Information"
+        //navigationItem.title = "Body Information"
         // Do any additional setup after loading the view.
     }
-
     
-    
-    
-
     override func viewWillAppear(_ animated: Bool) {
-        
+        parent?.navigationItem.title = "Body Information"
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,11 +50,14 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     func setupUI() {
         weightField.delegate = self
         heightField.delegate = self
+        ageField.delegate    = self
         nextButton.isEnabled = false
     }
     
     func enableNextButton() {
-        if weightField.text != nil && heightField.text != nil && unitSwitchHasChanged {
+        
+        
+        if weightField.text != nil && heightField.text != nil && ageField.text != nil && unitSwitchHasChanged {
             nextButton.isEnabled = true
         }
     }
@@ -96,10 +100,25 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func next(_ sender: UIButton) {
         
         print("SUCCESSFULLY FILLED OUT BODY INFORMATION!")
+        let parentVC = parent as! CreateUserPageViewController
         
+        //parentVC.setViewControllers([parentVC.viewControllerAtIndex(index: 2)!], direction: .forward, animated: true,
+                                    //completion: nil)
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GoalsInformationViewController {
+            
+            data?["weight"] = Float(weightField.text!)
+            data?["height"] = heightField.text
+            data?["age"] = Int16(ageField.text!)
+            data?["unit"] = unitSwitch.isOn ? "SI" : "Metric"
+            
+            
+            vc.data = data
+        }
+    }
     
     /*
     // MARK: - Navigation

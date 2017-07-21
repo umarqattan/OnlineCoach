@@ -11,7 +11,7 @@ import UIKit
 class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDelegate, UIPageViewControllerDataSource {
 
     
-    public var identifiers = ["UserInformationViewController", "BodyInformationViewController"]
+    public var identifiers = ["UserInformationViewController", "BodyInformationViewController", "GoalsInformationViewController"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,7 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor.gray
         appearance.currentPageIndicatorTintColor = UIColor.white
-        appearance.backgroundColor = UIColor.darkGray
+        appearance.backgroundColor = UIColor(colorLiteralRed: 0.0/255.0, green: 128.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
     
     func viewControllerAtIndex(index: Int) -> UIViewController? {
@@ -61,10 +61,10 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
         if identifiers.count == 0 || index >= identifiers.count {
             return nil
         }
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+       
         
     
-        let viewController = storyBoard.instantiateViewController(withIdentifier: identifiers[index])
+        let viewController = storyboard?.instantiateViewController(withIdentifier: identifiers[index])
         
         
         
@@ -77,13 +77,19 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
         
         let vc1 = viewControllerAtIndex(index: 0) as? UserInformationViewController
         let vc2 = viewControllerAtIndex(index: 1) as? BodyInformationViewController
+        let vc3 = viewControllerAtIndex(index: 2) as? GoalsInformationViewController
+        
         var index:Int = 0
         
-        if viewController == vc1 {
-            
+        
+        
+        if viewController.isKind(of: UserInformationViewController.self) {
             index = (vc1?.index)!
-        } else if viewController == vc2 {
+            
+        } else if viewController.isKind(of: BodyInformationViewController.self) {
             index = (vc2?.index)!
+        } else if viewController.isKind(of: GoalsInformationViewController.self) {
+                index = (vc3?.index)!
         } else {
             return nil
         }
@@ -93,8 +99,8 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
         if index == identifiers.count {
             return nil
         }
-        
         return viewControllerAtIndex(index: index)
+        
         
     }
     
@@ -102,12 +108,17 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
         
         let vc1 = viewControllerAtIndex(index: 0) as? UserInformationViewController
         let vc2 = viewControllerAtIndex(index: 1) as? BodyInformationViewController
+        let vc3 = viewControllerAtIndex(index: 2) as? GoalsInformationViewController
         var index:Int = 0
         
-        if viewController == vc1 {
+        
+        if viewController.isKind(of: UserInformationViewController.self) {
             index = (vc1?.index)!
-        } else if viewController == vc2 {
+            
+        } else if viewController.isKind(of: BodyInformationViewController.self) {
             index = (vc2?.index)!
+        } else if viewController.isKind(of: GoalsInformationViewController.self) {
+            index = (vc3?.index)!
         } else {
             return nil
         }
@@ -120,6 +131,8 @@ class CreateUserPageViewController: UIPageViewController,UIPageViewControllerDel
         index -= 1
         
         return viewControllerAtIndex(index: index)
+        
+     
 
     }
     
