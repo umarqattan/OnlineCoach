@@ -11,7 +11,7 @@ import UIKit
 class UserInformationViewController: UIViewController, UITextFieldDelegate {
 
     
-    let index = 0
+    
     
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
@@ -20,6 +20,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var roleSwitch: UISwitch!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var cancel: UIBarButtonItem!
     
     var data:[String:Any]?
     
@@ -36,15 +37,15 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         
         
         setupUI()
-        //parent?.navigationItem.title = "User Information"
-        //navigationItem.title = "User Information"
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        parent?.navigationItem.title = "User Information"
+        navigationItem.title = "User"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +53,8 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
     
     // UI Helper Functions
     func setupUI() {
@@ -68,7 +71,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func enableNextButton() {
-        if firstNameField.text != nil && lastNameField != nil && emailAddressField.text != nil && phoneNumberField.text != nil && roleSwitchHasChanged {
+        if firstNameField.text != nil && lastNameField != nil && emailAddressField.text != nil && phoneNumberField.text != nil {
             nextButton.isEnabled = true
         }
     }
@@ -87,6 +90,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+   
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
@@ -115,32 +119,6 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func next(_ sender: UIButton) {
         print("SUCCESSFULLY FILLED OUT USER INFORMATION!")
         
-        let parentVC = parent as! CreateUserPageViewController
-        
-        data = [
-        "firstName" : firstNameField.text ?? "",
-        "lastName" : lastNameField.text ?? "",
-        "age" : Int16(0),
-        "emailAddress" : emailAddressField.text ?? "" ,
-        "phoneNumber" : phoneNumberField.text ?? "",
-        "isCoach" : roleSwitch.isOn ? true : false,
-        "isClient" : roleSwitch.isOn ? false : true,
-        "weight" : Float(0),
-        "height" : "",
-        "unit" : "Metric",
-        "goal" : "Shred"
-        ]
-
-        let vc = parentVC.viewControllerAtIndex(index: 1) as! BodyInformationViewController
-        vc.data = data
-        parentVC.setViewControllers([vc], direction: .forward, animated: true,
-                                    completion: nil)
-
-        
-        
-       
-        
-        
     }
     
     @IBAction func roleSwitchChange(_ sender: UISwitch) {
@@ -149,25 +127,32 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? BodyInformationViewController {
-            
+        
+        if segue.identifier == "BodyInformationViewControllerSegue" {
+            let vc = segue.destination as? BodyInformationViewController
             data = [
                 "firstName" : firstNameField.text ?? "",
                 "lastName" : lastNameField.text ?? "",
-                "age" : 0,
-                "emailAddress" : emailAddressField.text ?? "" ,
+                "age" : Int16(0),
+                "birthDate" : "",
+                "emailAddress" : emailAddressField.text ?? "",
                 "phoneNumber" : phoneNumberField.text ?? "",
                 "isCoach" : roleSwitch.isOn ? true : false,
                 "isClient" : roleSwitch.isOn ? false : true,
-                "weight" : 0.00,
+                "weight" : Float(0),
                 "height" : "",
-                "unit" : "",
-                "goal" : ""
+                "unit" : "Metric",
+                "goal" : "Shred"
             ]
             
-            vc.data = data
+            vc?.data = data
+            
         }
     }
     

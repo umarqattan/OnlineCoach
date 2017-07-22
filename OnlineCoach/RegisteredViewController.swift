@@ -39,7 +39,9 @@ class RegisteredViewController: UIViewController {
         
         print(user.description)
         
-        
+        navigationItem.backBarButtonItem?.title = "Goals"
+            
+            
         appDelegate.saveContext()
         
         

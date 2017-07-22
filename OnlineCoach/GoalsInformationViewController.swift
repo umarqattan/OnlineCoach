@@ -11,13 +11,10 @@ import UIKit
 class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
     
     
-    let index = 2
-    
+
     var data:[String:Any]?
    
-  
-    
-    
+
     @IBOutlet weak var goalControl: UISegmentedControl!
     
     var goalsSegmentedControlHasChanged:Bool = false
@@ -39,7 +36,8 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        parent?.navigationItem.title = "Goals Information"
+        navigationItem.title = "Goals"
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,12 +48,12 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
     // UI Helper functions
     func setupUI() {
         
-        nextButton.isEnabled = false
+        
     }
     
     func enableNextButton() {
         if goalsSegmentedControlHasChanged {
-            nextButton.isEnabled = true
+            
         }
        
     }
@@ -79,10 +77,8 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func next(_ sender: UIButton) {
-        let registeredVC = storyboard?.instantiateViewController(withIdentifier: "RegisteredViewController") as! RegisteredViewController
-        data?["goal"] = goalControl.titleForSegment(at: goalControl.selectedSegmentIndex)
-        registeredVC.data = data
-        navigationController?.pushViewController(registeredVC, animated: true)
+        print("YOU REGISTERED!")
+
     }
    
     
@@ -97,12 +93,13 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
      */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? RegisteredViewController {
-            
+        if segue.identifier == "RegisteredViewControllerSegue" {
+            let vc = segue.destination as? RegisteredViewController
             
             data?["goal"] = goalControl.titleForSegment(at: goalControl.selectedSegmentIndex)
-            vc.data = data
+            vc?.data = data
         }
-     }
+        
+    }
     
 }

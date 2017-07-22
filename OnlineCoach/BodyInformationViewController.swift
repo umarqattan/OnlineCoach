@@ -11,7 +11,7 @@ import UIKit
 class BodyInformationViewController: UIViewController, UITextFieldDelegate {
 
   
-    let index = 1
+    
     
     
     @IBOutlet weak var heightField: UITextField!
@@ -20,11 +20,14 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var unitSwitch: UISwitch!
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var heightUnitLabel: UILabel!
+    @IBOutlet weak var weightUnitLabel: UILabel!
     
     
     var unitSwitchHasChanged:Bool = false
     var data:[String:Any]?
-    
+    let datePickerView:UIDatePicker = UIDatePicker()
+    var age:Int16!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +41,9 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        parent?.navigationItem.title = "Body Information"
+        navigationItem.title = "Body"
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,12 +57,63 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
         heightField.delegate = self
         ageField.delegate    = self
         nextButton.isEnabled = false
+        
+        datePickerView.datePickerMode = .date
+        
+        //
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneDatePicker(_ :)))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker(_ :)))
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+        
+        
+        datePickerView.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+
+        ageField.inputAccessoryView = toolbar
+       
+        ageField.inputView = datePickerView
+
+    }
+    
+    func doneDatePicker(_ sender:UIBarButtonItem) {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        
+        
+        ageField.text = dateFormatter.string(from: datePickerView.date)
+        age = datePickerView.date.age
+        ageField.endEditing(true)
+    }
+    
+    func cancelDatePicker(_ sender:UIBarButtonItem) {
+        ageField.text = ""
+        ageField.endEditing(true)
+    }
+    
+    func datePickerValueChanged(_ sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        
+        
+        ageField.text = dateFormatter.string(from: sender.date)
+        age = sender.date.age
     }
     
     func enableNextButton() {
         
         
-        if weightField.text != nil && heightField.text != nil && ageField.text != nil && unitSwitchHasChanged {
+        if weightField.text != nil && heightField.text != nil && ageField.text != nil {
             nextButton.isEnabled = true
         }
     }
@@ -89,44 +145,53 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    
     // Pragma: IBActions
     
     @IBAction func unitSwitchChange(_ sender: UISwitch) {
         if unitSwitchHasChanged == false {
             unitSwitchHasChanged = true
         }
+        
+        if unitSwitch.isOn {
+            heightUnitLabel.text = "in"
+            weightUnitLabel.text = "lb"
+
+            
+            
+        } else {
+            heightUnitLabel.text = "cm"
+            weightUnitLabel.text = "kg"
+        }
     }
+    
+    
     
     @IBAction func next(_ sender: UIButton) {
         
         print("SUCCESSFULLY FILLED OUT BODY INFORMATION!")
-        let parentVC = parent as! CreateUserPageViewController
         
         
-        let vc = parentVC.viewControllerAtIndex(index: 2) as! GoalsInformationViewController
+    
         
-        data?["weight"] = Float(weightField.text!)
-        data?["height"] = heightField.text
-        data?["age"] = Int16(ageField.text!)
-        data?["unit"] = unitSwitch.isOn ? "SI" : "Metric"
-        
-        vc.data = data
-        parentVC.setViewControllers([vc], direction: .forward, animated: true,
-                                    completion: nil)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? GoalsInformationViewController {
+        if segue.identifier == "GoalsInformationViewControllerSegue" {
             
+            let vc = segue.destination as? GoalsInformationViewController
             data?["weight"] = Float(weightField.text!)
             data?["height"] = heightField.text
-            data?["age"] = Int16(ageField.text!)
-            data?["unit"] = unitSwitch.isOn ? "SI" : "Metric"
-            
-            
-            vc.data = data
+            data?["age"] = age
+            data?["unit"] = unitSwitch.isOn ? "English" : "Metric"
+            data?["birthDate"] = ageField.text
+            vc?.data = data
         }
+    
     }
     
     /*

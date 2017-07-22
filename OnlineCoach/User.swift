@@ -21,6 +21,7 @@ class User: NSManagedObject {
     @NSManaged var height:String?
     @NSManaged var weight:Float
     @NSManaged var age:Int16
+    @NSManaged var birthDate:String?
     @NSManaged var unit:String?
     @NSManaged var goal:String?
     
@@ -41,6 +42,7 @@ class User: NSManagedObject {
         isCoach = data?["isCoach"] as! Bool
         height = data?["height"] as? String
         weight = (data?["weight"] as? Float)!
+        birthDate = data?["birthDate"] as? String
         age = (data?["age"] as? Int16)!
         unit = data?["unit"] as? String
         goal = data?["goal"] as? String
