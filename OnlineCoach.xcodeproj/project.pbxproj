@@ -21,6 +21,7 @@
 		E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */; };
 		E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */; };
 		E18807691F23D66E00CF773D /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18807681F23D66E00CF773D /* DateExtensions.swift */; };
+		E1DB8B421F25DE8100728173 /* AzureHealthTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB8B411F25DE8100728173 /* AzureHealthTracker.swift */; };
 		E1F26D821F213EBD001E87BB /* GoalsInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */; };
 		E1F26D841F216A14001E87BB /* RegisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D831F216A14001E87BB /* RegisteredViewController.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
 		E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E18807681F23D66E00CF773D /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		E1DB8B411F25DE8100728173 /* AzureHealthTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureHealthTracker.swift; sourceTree = "<group>"; };
 		E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsInformationViewController.swift; sourceTree = "<group>"; };
 		E1F26D831F216A14001E87BB /* RegisteredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteredViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +190,7 @@
 		E1DB8B401F25DE1600728173 /* HealthTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E1DB8B411F25DE8100728173 /* AzureHealthTracker.swift */,
 			);
 			name = HealthTracker;
 			path = OnlineCoach;
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DB8B421F25DE8100728173 /* AzureHealthTracker.swift in Sources */,
 				E16A596B1F1E8280008A23A6 /* FoodDiariesViewController.swift in Sources */,
 				E14E5BD61F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld in Sources */,
 				E1F26D841F216A14001E87BB /* RegisteredViewController.swift in Sources */,
