@@ -8,5 +8,6 @@ namespace HealthTracker.Data.ViewModels
 {
     public class Class1
     {
+        //test
     }
 }
