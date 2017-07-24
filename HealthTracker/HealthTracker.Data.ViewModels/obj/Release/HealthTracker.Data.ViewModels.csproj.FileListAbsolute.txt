@@ -1,0 +1,5 @@
+C:\Users\Johng\Documents\Visual Studio 2015\Projects\HealthTracker\HealthTracker.Data.ViewModels\bin\Release\HealthTracker.Data.ViewModels.dll
+C:\Users\Johng\Documents\Visual Studio 2015\Projects\HealthTracker\HealthTracker.Data.ViewModels\bin\Release\HealthTracker.Data.ViewModels.pdb
+C:\Users\Johng\Documents\Visual Studio 2015\Projects\HealthTracker\HealthTracker.Data.ViewModels\obj\Release\HealthTracker.Data.ViewModels.csprojResolveAssemblyReference.cache
+C:\Users\Johng\Documents\Visual Studio 2015\Projects\HealthTracker\HealthTracker.Data.ViewModels\obj\Release\HealthTracker.Data.ViewModels.dll
+C:\Users\Johng\Documents\Visual Studio 2015\Projects\HealthTracker\HealthTracker.Data.ViewModels\obj\Release\HealthTracker.Data.ViewModels.pdb

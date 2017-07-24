@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/Manage/ManageLogins.cshtml" hash="1dc92fa5" filehash="2f1a91abf635" flags="110000" assembly="App_Web_b32pm5cn" type="ASP._Page_Views_Manage_ManageLogins_cshtml">
+    <filedeps>
+        <filedep name="/Views/Manage/ManageLogins.cshtml" />
+    </filedeps>
+</preserve>
