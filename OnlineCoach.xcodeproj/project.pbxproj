@@ -96,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				E14E5BCC1F1DE9E7000538F9 /* OnlineCoach */,
+				E1DB8B401F25DE1600728173 /* HealthTracker */,
 				E14E5BE41F1DE9E8000538F9 /* OnlineCoachTests */,
 				E14E5BEF1F1DE9E8000538F9 /* OnlineCoachUITests */,
 				E14E5BCB1F1DE9E7000538F9 /* Products */,
@@ -182,6 +183,14 @@
 				E18807681F23D66E00CF773D /* DateExtensions.swift */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		E1DB8B401F25DE1600728173 /* HealthTracker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HealthTracker;
+			path = OnlineCoach;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
