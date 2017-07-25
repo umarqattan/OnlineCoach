@@ -24,7 +24,7 @@ class RegisteredViewController: UIViewController {
         
         
         
-        
+        setupAccessibility()
         // Do any additional setup after loading the view.
     }
 

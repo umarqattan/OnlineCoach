@@ -28,9 +28,7 @@ class OnlineCoachUITests: XCTestCase {
         
         app = XCUIApplication()
         app.launchArguments.append("--uitesting")
-        
-        
-        
+    
     }
     
     func testLaunchPage() {
@@ -82,8 +80,6 @@ class OnlineCoachUITests: XCTestCase {
         XCTAssert(app.textFields["emailAddressField"].exists)
         XCTAssert(app.textFields["phoneNumberField"].exists)
         XCTAssert(app.switches["roleSwitch"].exists)
-        //XCTAssert(app.switches["nextButton"].exists)
-        
         
         app.textFields["firstNameField"].tap()
         app.textFields["firstNameField"].setText(text: "Umar", application: app)
@@ -125,10 +121,13 @@ class OnlineCoachUITests: XCTestCase {
         app.textFields["weightField"].setText(text: "163.5", application: app)
         
         app.textFields["ageField"].tap()
-        app.textFields["ageField"].setText(text: "September 10, 1994", application: app)
-        app.buttons.staticTexts["Done"].tap()
+        
+        app.pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: "September")
+        app.pickerWheels.element(boundBy: 1).adjust(toPickerWheelValue: "10")
+        app.pickerWheels.element(boundBy: 2).adjust(toPickerWheelValue: "1994")
         
         
+        app.buttons["doneButton"].tap()
         
         app.switches["unitSwitch"].tap()
         
@@ -147,12 +146,9 @@ class OnlineCoachUITests: XCTestCase {
         
         app.buttons["nextButton"].tap()
         
-        // Check if left the GoalsInformationViewController
-        //XCTAssertFalse(app.buttons["nextButton"].exists)
-        
         // YOU REGISTERED
-        XCTAssert(app.otherElements["youRegisteredLabel"].exists)
-        
+        XCTAssert(app.staticTexts["youRegisteredLabel"].exists)
+    
         
         
         

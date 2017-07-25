@@ -69,13 +69,16 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
         
         //done button & cancel button
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneDatePicker(_ :)))
+        doneButton.accessibilityIdentifier = "doneButton"
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker(_ :)))
+        cancelButton.accessibilityIdentifier = "cancelButton"
         toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         
         datePickerView.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
-
+        datePickerView.accessibilityIdentifier = "datePickerView"
+        
         ageField.inputAccessoryView = toolbar
        
         ageField.inputView = datePickerView
@@ -227,21 +230,4 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
-}
-
-
-
-extension BodyInformationViewController: UIPickerViewAccessibilityDelegate {
-    func pickerView(_ pickerView: UIPickerView, accessibilityHintForComponent component: Int) -> String? {
-        switch component {
-            case 0: return "Month"
-                break
-            case 1: return "Day"
-                break
-            case 2: return "Year"
-                break
-            default: return nil
-        }
-    }
-    
 }
