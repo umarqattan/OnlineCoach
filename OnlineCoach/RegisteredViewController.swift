@@ -14,6 +14,7 @@ class RegisteredViewController: UIViewController {
 
     
     
+    @IBOutlet weak var youRegisteredLabel: UILabel!
     var data:[String:Any]?
     
     
@@ -54,6 +55,13 @@ class RegisteredViewController: UIViewController {
     }
     
 
+    // MARK: UI Helper functions
+    func setupAccessibility() {
+        youRegisteredLabel.accessibilityIdentifier = "youRegisteredLabel"
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

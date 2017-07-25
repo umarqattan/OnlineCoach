@@ -25,6 +25,8 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        setupAccessibility()
         setupUI()
         
     
@@ -49,6 +51,11 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
     func setupUI() {
         
         
+    }
+    
+    func setupAccessibility() {
+        goalControl.accessibilityIdentifier = "goalControl"
+        nextButton.accessibilityIdentifier = "nextButton"
     }
     
     func enableNextButton() {

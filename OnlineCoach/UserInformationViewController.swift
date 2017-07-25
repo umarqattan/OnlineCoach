@@ -32,13 +32,19 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     var roleSwitchHasChanged:Bool = false
 
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupAccessibility()
         
         
         setupUI()
         
-        makeHTTPCall()
+        
+        
+        //makeHTTPCall()
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -58,46 +64,46 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
 
     
     // TODO: Fix GET method
-    func makeHTTPCall() {
-        
-        
-        let headers = [
-            "content-type": "application/json",
-            "cache-control": "no-cache",
-            "postman-token": "91003c5e-b2f4-ad33-e060-fbcda80f9070"
-        ]
-        
-        
-        do {
-            
-            
-            let request = NSMutableURLRequest(url: NSURL(string: "https://healthtrackerx.azurewebsites.net/api/Foods")! as URL,
-                                              cachePolicy: .useProtocolCachePolicy,
-                                              timeoutInterval: 10.0)
-            request.httpMethod = "GET"
-            request.allHTTPHeaderFields = headers
-            request.httpBody = nil
-            request.addValue("0", forHTTPHeaderField: "Content-Length")
-            
-            let session = URLSession.shared
-            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-                if (error != nil) {
-                    print(error)
-                } else {
-                    let httpResponse = response as? HTTPURLResponse
-                    print(httpResponse)
-                    
-                    let string1 = String(data: data!, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-                    print(string1)
-                    
-                }
-            })
-            
-            dataTask.resume()
-
-        }
-        
-    }
+//    func makeHTTPCall() {
+//        
+//        
+//        let headers = [
+//            "content-type": "application/json",
+//            "cache-control": "no-cache",
+//            "postman-token": "91003c5e-b2f4-ad33-e060-fbcda80f9070"
+//        ]
+//        
+//        
+//        do {
+//            
+//            
+//            let request = NSMutableURLRequest(url: NSURL(string: "https://healthtrackerx.azurewebsites.net/api/Foods")! as URL,
+//                                              cachePolicy: .useProtocolCachePolicy,
+//                                              timeoutInterval: 10.0)
+//            request.httpMethod = "GET"
+//            request.allHTTPHeaderFields = headers
+//            request.httpBody = nil
+//            request.addValue("0", forHTTPHeaderField: "Content-Length")
+//            
+//            let session = URLSession.shared
+//            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+//                if (error != nil) {
+//                    print(error)
+//                } else {
+//                    let httpResponse = response as? HTTPURLResponse
+//                    print(httpResponse)
+//                    
+//                    let string1 = String(data: data!, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+//                    print(string1)
+//                    
+//                }
+//            })
+//            
+//            dataTask.resume()
+//
+//        }
+//        
+//    }
     
     
     // UI Helper Functions
@@ -107,10 +113,16 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         emailAddressField.delegate = self
         phoneNumberField.delegate = self
         nextButton.isEnabled = false
-        
-        
-        
-        
+    
+    }
+    
+    func setupAccessibility() {
+        firstNameField.accessibilityIdentifier = "firstNameField"
+        lastNameField.accessibilityIdentifier = "lastNameField"
+        emailAddressField.accessibilityIdentifier = "emailAddressField"
+        phoneNumberField.accessibilityIdentifier = "phoneNumberField"
+        roleSwitch.accessibilityIdentifier = "roleSwitch"
+        nextButton.accessibilityIdentifier = "nextButton"
         
     }
     
@@ -202,4 +214,8 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     
     
 }
+
+
+
+
 

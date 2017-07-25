@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -99,6 +99,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WSU-0x-rYB"/>
+                    <connections>
+                        <outlet property="loginButton" destination="00l-0L-bbT" id="Sje-x8-3bY"/>
+                        <outlet property="passwordField" destination="RoF-qS-yyi" id="3d8-4G-bdN"/>
+                        <outlet property="registerHereButton" destination="3Z3-RO-WHP" id="X9M-ZG-2LQ"/>
+                        <outlet property="usernameField" destination="WXT-by-LYv" id="vnW-8e-rtj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -610,6 +616,9 @@
                             <constraint firstItem="XC3-Fv-9XX" firstAttribute="centerY" secondItem="69D-u4-QkX" secondAttribute="centerY" id="yKb-po-wuu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="youRegisteredLabel" destination="XC3-Fv-9XX" id="5eI-vy-OKf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeB-MC-PPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

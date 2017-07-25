@@ -22,6 +22,7 @@
 		E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */; };
 		E18807691F23D66E00CF773D /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18807681F23D66E00CF773D /* DateExtensions.swift */; };
 		E1DB8B421F25DE8100728173 /* AzureHealthTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB8B411F25DE8100728173 /* AzureHealthTracker.swift */; };
+		E1E208ED1F26B017003F1E38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E208EC1F26B017003F1E38 /* LoginViewController.swift */; };
 		E1F26D821F213EBD001E87BB /* GoalsInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */; };
 		E1F26D841F216A14001E87BB /* RegisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D831F216A14001E87BB /* RegisteredViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E18807681F23D66E00CF773D /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		E1DB8B411F25DE8100728173 /* AzureHealthTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureHealthTracker.swift; sourceTree = "<group>"; };
+		E1E208EC1F26B017003F1E38 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsInformationViewController.swift; sourceTree = "<group>"; };
 		E1F26D831F216A14001E87BB /* RegisteredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteredViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 		E16A59761F1EC627008A23A6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E1E208EC1F26B017003F1E38 /* LoginViewController.swift */,
 				E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */,
 				E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */,
 				E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */,
@@ -344,6 +347,7 @@
 				E14E5BCE1F1DE9E7000538F9 /* AppDelegate.swift in Sources */,
 				E136B05C1F2194AC00B0FF9D /* User.swift in Sources */,
 				E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */,
+				E1E208ED1F26B017003F1E38 /* LoginViewController.swift in Sources */,
 				E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

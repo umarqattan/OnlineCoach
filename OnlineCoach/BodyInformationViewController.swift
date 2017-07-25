@@ -32,6 +32,7 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupAccessiblity()
         setupUI()
         
         
@@ -39,6 +40,8 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
         //navigationItem.title = "Body Information"
         // Do any additional setup after loading the view.
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.title = "Body"
@@ -78,6 +81,22 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
         ageField.inputView = datePickerView
 
     }
+    
+    func setupAccessiblity() {
+
+        
+        heightField.accessibilityIdentifier = "heightField"
+        weightField.accessibilityIdentifier = "weightField"
+        ageField.accessibilityIdentifier = "ageField"
+        unitSwitch.accessibilityIdentifier = "unitSwitch"
+        nextButton.accessibilityIdentifier = "nextButton"
+        heightUnitLabel.accessibilityIdentifier = "heightUnitLabel"
+        weightUnitLabel.accessibilityIdentifier = "weightUnitLabel"
+        
+        
+    }
+    
+    // MARK: selector methods
     
     func doneDatePicker(_ sender:UIBarButtonItem) {
         
@@ -138,7 +157,11 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        
         textField.resignFirstResponder()
+    
+        
         
         enableNextButton()
         
@@ -204,4 +227,21 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+}
+
+
+
+extension BodyInformationViewController: UIPickerViewAccessibilityDelegate {
+    func pickerView(_ pickerView: UIPickerView, accessibilityHintForComponent component: Int) -> String? {
+        switch component {
+            case 0: return "Month"
+                break
+            case 1: return "Day"
+                break
+            case 2: return "Year"
+                break
+            default: return nil
+        }
+    }
+    
 }
