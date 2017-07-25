@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HealthTrackerModelStoreContainer" CdmEntityContainer="HealthTrackerEntities">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="HealthTrackerModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="HealthTrackerModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="HealthTrackerModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="HealthTrackerModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccountDeleted" ColumnName="AccountDeleted" />
+          <ScalarProperty Name="Intesity" ColumnName="Intesity" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="UseMetric" ColumnName="UseMetric" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diaries">
+      <EntityTypeMapping TypeName="HealthTrackerModel.Diary">
+        <MappingFragment StoreEntitySet="Diary">
+          <ScalarProperty Name="DiaryId" ColumnName="DiaryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exercises">
+      <EntityTypeMapping TypeName="HealthTrackerModel.Exercise">
+        <MappingFragment StoreEntitySet="Exercise">
+          <ScalarProperty Name="ExerciseId" ColumnName="ExerciseId" />
+          <ScalarProperty Name="ExerciseName" ColumnName="ExerciseName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExerciseEntries">
+      <EntityTypeMapping TypeName="HealthTrackerModel.ExerciseEntry">
+        <MappingFragment StoreEntitySet="ExerciseEntry">
+          <ScalarProperty Name="ExerciseEntryId" ColumnName="ExerciseEntryId" />
+          <ScalarProperty Name="ExerciseId" ColumnName="ExerciseId" />
+          <ScalarProperty Name="DiaryId" ColumnName="DiaryId" />
+          <ScalarProperty Name="Sets" ColumnName="Sets" />
+          <ScalarProperty Name="Reps" ColumnName="Reps" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Complete" ColumnName="Complete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExerciseGroups">
+      <EntityTypeMapping TypeName="HealthTrackerModel.ExerciseGroup">
+        <MappingFragment StoreEntitySet="ExerciseGroup">
+          <ScalarProperty Name="ExerciseGroupId" ColumnName="ExerciseGroupId" />
+          <ScalarProperty Name="ExerciseGroupName" ColumnName="ExerciseGroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foods">
+      <EntityTypeMapping TypeName="HealthTrackerModel.Food">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+          <ScalarProperty Name="FoodName" ColumnName="FoodName" />
+          <ScalarProperty Name="ServingSize" ColumnName="ServingSize" />
+          <ScalarProperty Name="ServingSizeUnits" ColumnName="ServingSizeUnits" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="Fat" ColumnName="Fat" />
+          <ScalarProperty Name="Carbs" ColumnName="Carbs" />
+          <ScalarProperty Name="Protein" ColumnName="Protein" />
+          <ScalarProperty Name="Fiber" ColumnName="Fiber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodEntries">
+      <EntityTypeMapping TypeName="HealthTrackerModel.FoodEntry">
+        <MappingFragment StoreEntitySet="FoodEntry">
+          <ScalarProperty Name="FoodEntryId" ColumnName="FoodEntryId" />
+          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+          <ScalarProperty Name="DiaryId" ColumnName="DiaryId" />
+          <ScalarProperty Name="MealId" ColumnName="MealId" />
+          <ScalarProperty Name="NumberOfServings" ColumnName="NumberOfServings" />
+          <ScalarProperty Name="Complete" ColumnName="Complete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meals">
+      <EntityTypeMapping TypeName="HealthTrackerModel.Meal">
+        <MappingFragment StoreEntitySet="Meal">
+          <ScalarProperty Name="MealId" ColumnName="MealId" />
+          <ScalarProperty Name="MealName" ColumnName="MealName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Progresses">
+      <EntityTypeMapping TypeName="HealthTrackerModel.Progress">
+        <MappingFragment StoreEntitySet="Progress">
+          <ScalarProperty Name="ProgressId" ColumnName="ProgressId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JoinedFoodEntries">
+      <EntityTypeMapping TypeName="HealthTrackerModel.JoinedFoodEntry">
+        <MappingFragment StoreEntitySet="JoinedFoodEntry">
+          <ScalarProperty Name="FoodEntryId" ColumnName="FoodEntryId" />
+          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DiaryId" ColumnName="DiaryId" />
+          <ScalarProperty Name="DiaryDate" ColumnName="DiaryDate" />
+          <ScalarProperty Name="MealId" ColumnName="MealId" />
+          <ScalarProperty Name="MealName" ColumnName="MealName" />
+          <ScalarProperty Name="FoodName" ColumnName="FoodName" />
+          <ScalarProperty Name="ServingSize" ColumnName="ServingSize" />
+          <ScalarProperty Name="ServingsSizeUnits" ColumnName="ServingsSizeUnits" />
+          <ScalarProperty Name="NumberOfServings" ColumnName="NumberOfServings" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="Fat" ColumnName="Fat" />
+          <ScalarProperty Name="Carbs" ColumnName="Carbs" />
+          <ScalarProperty Name="Protein" ColumnName="Protein" />
+          <ScalarProperty Name="Fiber" ColumnName="Fiber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDiaries">
+      <EntityTypeMapping TypeName="HealthTrackerModel.UserDiary">
+        <MappingFragment StoreEntitySet="UserDiary">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DiaryId" ColumnName="DiaryId" />
+          <ScalarProperty Name="DairyDate" ColumnName="DairyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="HealthTrackerModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ExerciseExerciseGroup" TypeName="HealthTrackerModel.ExerciseExerciseGroup" StoreEntitySet="ExerciseExerciseGroup">
+      <EndProperty Name="Exercise">
+        <ScalarProperty Name="ExerciseId" ColumnName="ExerciseId" />
+      </EndProperty>
+      <EndProperty Name="ExerciseGroup">
+        <ScalarProperty Name="ExerciseGroupId" ColumnName="ExerciseGroupId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

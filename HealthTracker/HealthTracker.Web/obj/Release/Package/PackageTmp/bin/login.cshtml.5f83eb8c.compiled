@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/Account/Login.cshtml" hash="1dc92fa5" filehash="ffffc65085b37d3c" flags="110000" assembly="App_Web_l2cth0od" type="ASP._Page_Views_Account_Login_cshtml">
+    <filedeps>
+        <filedep name="/Views/Account/Login.cshtml" />
+    </filedeps>
+</preserve>

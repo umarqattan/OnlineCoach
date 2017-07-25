@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-HealthTracker.Web-20170717080618.mdf;Initial Catalog=aspnet-HealthTracker.Web-20170717080618;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Johng\\Documents\\Visual\ Studio\ 2015\\Projects\\HealthTracker\\HealthTracker\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection2-Web.config Connection String" description="DefaultConnection2 Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-MBAET5J;Initial Catalog=HealthTracker;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Johng\\Documents\\Visual\ Studio\ 2015\\Projects\\HealthTracker\\HealthTracker\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection2']/@connectionString" />
+  </parameter>
+  <parameter name="HealthTrackerEntities-Web.config Connection String" description="HealthTrackerEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/HealthTracker.csdl|res://*/HealthTracker.ssdl|res://*/HealthTracker.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=healthtracker.database.windows.net;initial catalog=HealthTracker;persist security info=True;user id=goodlad;password=Warcraftt3;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Johng\\Documents\\Visual\ Studio\ 2015\\Projects\\HealthTracker\\HealthTracker\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HealthTrackerEntities']/@connectionString" />
+  </parameter>
+</parameters>
