@@ -59,5 +59,5 @@ FoodEntry#,FoodName,ServingSize,ServingSizeUnits,Calories,Fat,Carb,Protein,Fiber
 58,Halo Top Ice Cream (240 calories),1,pint,240,6,44,24,12
 59,Halo Top Ice Cream (280 calories),1,pint,280,8,48,24,12
 60,Halo Top Ice Cream (320 calories),1,pint,320,12,56,20,12
-,Halo Top Ice Cream (360 calories),1,pint,360,12,64,20,12
-61,Whole Wheat Bread,1,slice,70,1,13,2,1
+61,Halo Top Ice Cream (360 calories),1,pint,360,12,64,20,12
+62,Whole Wheat Bread,1,slice,70,1,13,2,1
