@@ -1,105 +1,100 @@
-Exercise#,ExerciseName,GroupName,,,,
-1,Barbell Flat Bench Press,Chest,,,,
-2,Barbell Incline Bench Press,Chest,,,,
-3,Barbell Decline Bench Press,Chest,,,,
-4,Dumbell Flat Bench Press,Chest,,,,
-5,Dumbbell Incline Bench Press,Chest,,,,
-6,Dumbbell Decline Bench Press,Chest,,,,
-7,Dumbbell Flat Fly,Chest,,,,
-8,Dumbbell Incline Fly,Chest,,,,
-9,Dumbbell Decline Fly,Chest,,,,
-10,Dumbbell Pullover,Chest,,,,
-11,Cable Incline Fly,Chest,,,,
-12,Cable Decline Fly,Chest,,,,
-13,Machine Pec Dec Fly,Chest,,,,
-14,Machine Incline Bench Press,Chest,,,,
-15,Machine Flat Bench Press,Chest,,,,
-16,Machine Decline Bench Press,Chest,,,,
-17,Push-up,Chest,,,,
-18,Barbell Deadlift,Back,,,,
-19,Barbell Row,Back,,,,
-20,Barbell T-Bar Row,Back,,,,
-21,Dumbbell Row,Back,,,,
-22,Machine T-Bar Row,Back,,,,
-23,Machine Low Row,Back,,,,
-24,Machine High Row,Back,,,,
-25,Machine Mid Row,Back,,,,
-26,Cable Low Row,Back,,,,
-27,Cable Pulldown,Back,,,,
-28,Cable Single-Arm Pulldown,Back,,,,
-29,Cable Close-Grip Pulldown,Back,,,,
-30,Pull-up,Back,,,,
-31,Barbell Wide-Grip Bicep Curl,Biceps,,,,
-32,Barbell Close-Grip Bicep Curl,Biceps,,,,
-33,Machine Bicep Curl,Biceps,,,,
-34,Machine Reverse Bicep Curl,Biceps,,,,
-35,Cable Bicep Curl,Biceps,,,,
-36,Cable Reverse Bicep Curl,Biceps,,,,
-37,Dumbbell Bicep Curl,Biceps,,,,
-38,Dumbbell Hammer Bicep Curl,Biceps,,,,
-39,EZ-Bar Close-Grip Bicep Curl,Biceps,,,,
-40,EZ-Bar Close-Grip Reverse Bicep Curl,Biceps,,,,
-41,EZ-Bar Wide-Grip Bicep Curl,Biceps,,,,
-42,EZ-Bar Wide-Grip Reverse Bicep Curl,Biceps,,,,
-43,Barbell Flat Close-Grip Bench Press,Triceps,,,,
-44,Barbell Incline Close-Grip Bench Press,Triceps,,,,
-45,Barbell Decline Close-Grip Bench Press,Triceps,,,,
-46,Dumbbell Single-Arm Tricep Extension,Triceps,,,,
-47,Dumbbell Tricep Extension,Triceps,,,,
-48,Machine Tricep Extension,Triceps,,,,
-49,Cable Tricep Pushdown,Triceps,,,,
-50,Cable Single-Arm Tricep Pushdown,Triceps,,,,
-51,Machine Dip,Triceps,,,,
-52,Dip,Triceps,,,,
-53,Close-Grip Push-up,Triceps,,,,
-54,Barbell Overhead Press,Shoulders,,,,
-55,Dumbbell Shoulder Press,Shoulders,,,,
-56,Dumbbell Single-Arm Shoulder Press,Shoulders,,,,
-57,Dumbbell Lateral-Delt Raise,Shoulders,,,,
-58,Dumbbell Front-Delt Raise,Shoulders,,,,
-59,Dumbbell Rear-Delt Fly,Shoulders,,,,
-60,Machine Lateral-Delt Raise,Shoulders,,,,
-61,Cable Lateral-Delt Raise,Shoulders,,,,
-,Cable Front-Delt Raise,Shoulders,,,,
-62,Machine Reverse Pec Dec Fly,Shoulders,,,,
-63,EZ-Bar Close-Grip Upright Row,Shoulders,,,,
-64,EZ-Bar Wide-Grip Upright Row,Shoulders,,,,
-65,Cable Wide-Grip Upright Row,Shoulders,,,,
-66,Cable Close-Grip Upright Row,Shoulders,,,,
-67,Machine Shoulder Press,Shoulders,,,,
-68,Barbell Back Squat,Legs,,,,
-69,Dumbbell Goblet Squat,Legs,,,,
-70,Barbell Front Squat,Legs,,,,
-71,Machine Incline Hack Squat,Legs,,,,
-72,Machine Lying Hack Squat,Legs,,,,
-73,Machine Leg Press,Legs,,,,
-74,Machine Incline Leg Press,Legs,,,,
-75,Machine Leg Extension,Legs,,,,
-76,Machine Leg Curl,Legs,,,,
-77,Machine Lying Leg Curl,Legs,,,,
-78,Machine Standing Calf Raise,Legs,,,,
-79,Machine Seated Calf Raise,Legs,,,,
-80,Dumbbell Romanian Deadlift,Legs,,,,
-81,Dumbbell Lunge,Legs,,,,
-82,Barbell Lunge,Legs,,,,
-83,Hanging Leg Raise,Abs,,,,
-84,Hanging Knee Raise,Abs,,,,
-85,Lying Leg Lift,Abs,,,,
-86,Crunch,Abs,,,,
-87,Plank,Abs,,,,
-88,Bicycle Kick,Abs,,,,
-89,Machine Crunch,Abs,,,,
-90,Windshield Wiper,Abs,,,,
-91,Run,Cardio,,,,
-92,Jog,Cardio,,,,
-93,Sprint,Cardio,,,,
-94,Walk,Cardio,,,,
-95,Stairmaster,Cardio,,,,
-96,Cycle,Cardio,,,,
-97,Elliptical,Cardio,,,,
-98,Rock Climb,Cardio,,,,
-,,,,,,
-,,,,,,
-,,,,,,
-,,,,,,
-,,,,,,
+Exercise#,ExerciseName,GroupName
+1,Barbell Flat Bench Press,Chest
+2,Barbell Incline Bench Press,Chest
+3,Barbell Decline Bench Press,Chest
+4,Dumbell Flat Bench Press,Chest
+5,Dumbbell Incline Bench Press,Chest
+6,Dumbbell Decline Bench Press,Chest
+7,Dumbbell Flat Fly,Chest
+8,Dumbbell Incline Fly,Chest
+9,Dumbbell Decline Fly,Chest
+10,Dumbbell Pullover,Chest
+11,Cable Incline Fly,Chest
+12,Cable Decline Fly,Chest
+13,Machine Pec Dec Fly,Chest
+14,Machine Incline Bench Press,Chest
+15,Machine Flat Bench Press,Chest
+16,Machine Decline Bench Press,Chest
+17,Push-up,Chest
+18,Barbell Deadlift,Back
+19,Barbell Row,Back
+20,Barbell T-Bar Row,Back
+21,Dumbbell Row,Back
+22,Machine T-Bar Row,Back
+23,Machine Low Row,Back
+24,Machine High Row,Back
+25,Machine Mid Row,Back
+26,Cable Low Row,Back
+27,Cable Pulldown,Back
+28,Cable Single-Arm Pulldown,Back
+29,Cable Close-Grip Pulldown,Back
+30,Pull-up,Back
+31,Barbell Wide-Grip Bicep Curl,Biceps
+32,Barbell Close-Grip Bicep Curl,Biceps
+33,Machine Bicep Curl,Biceps
+34,Machine Reverse Bicep Curl,Biceps
+35,Cable Bicep Curl,Biceps
+36,Cable Reverse Bicep Curl,Biceps
+37,Dumbbell Bicep Curl,Biceps
+38,Dumbbell Hammer Bicep Curl,Biceps
+39,EZ-Bar Close-Grip Bicep Curl,Biceps
+40,EZ-Bar Close-Grip Reverse Bicep Curl,Biceps
+41,EZ-Bar Wide-Grip Bicep Curl,Biceps
+42,EZ-Bar Wide-Grip Reverse Bicep Curl,Biceps
+43,Barbell Flat Close-Grip Bench Press,Triceps
+44,Barbell Incline Close-Grip Bench Press,Triceps
+45,Barbell Decline Close-Grip Bench Press,Triceps
+46,Dumbbell Single-Arm Tricep Extension,Triceps
+47,Dumbbell Tricep Extension,Triceps
+48,Machine Tricep Extension,Triceps
+49,Cable Tricep Pushdown,Triceps
+50,Cable Single-Arm Tricep Pushdown,Triceps
+51,Machine Dip,Triceps
+52,Dip,Triceps
+53,Close-Grip Push-up,Triceps
+54,Barbell Overhead Press,Shoulders
+55,Dumbbell Shoulder Press,Shoulders
+56,Dumbbell Single-Arm Shoulder Press,Shoulders
+57,Dumbbell Lateral-Delt Raise,Shoulders
+58,Dumbbell Front-Delt Raise,Shoulders
+59,Dumbbell Rear-Delt Fly,Shoulders
+60,Machine Lateral-Delt Raise,Shoulders
+61,Cable Lateral-Delt Raise,Shoulders
+,Cable Front-Delt Raise,Shoulders
+62,Machine Reverse Pec Dec Fly,Shoulders
+63,EZ-Bar Close-Grip Upright Row,Shoulders
+64,EZ-Bar Wide-Grip Upright Row,Shoulders
+65,Cable Wide-Grip Upright Row,Shoulders
+66,Cable Close-Grip Upright Row,Shoulders
+67,Machine Shoulder Press,Shoulders
+68,Barbell Back Squat,Legs
+69,Dumbbell Goblet Squat,Legs
+70,Barbell Front Squat,Legs
+71,Machine Incline Hack Squat,Legs
+72,Machine Lying Hack Squat,Legs
+73,Machine Leg Press,Legs
+74,Machine Incline Leg Press,Legs
+75,Machine Leg Extension,Legs
+76,Machine Leg Curl,Legs
+77,Machine Lying Leg Curl,Legs
+78,Machine Standing Calf Raise,Legs
+79,Machine Seated Calf Raise,Legs
+80,Dumbbell Romanian Deadlift,Legs
+81,Dumbbell Lunge,Legs
+82,Barbell Lunge,Legs
+83,Hanging Leg Raise,Abs
+84,Hanging Knee Raise,Abs
+85,Lying Leg Lift,Abs
+86,Crunch,Abs
+87,Plank,Abs
+88,Bicycle Kick,Abs
+89,Machine Crunch,Abs
+90,Windshield Wiper,Abs
+91,Run,Cardio
+92,Jog,Cardio
+93,Sprint,Cardio
+94,Walk,Cardio
+95,Stairmaster,Cardio
+96,Cycle,Cardio
+97,Elliptical,Cardio
+98,Rock Climb,Cardio
