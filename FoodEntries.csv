@@ -1,62 +1,63 @@
 FoodEntry#,FoodName,ServingSize,ServingSizeUnits,Calories,Fat,Carb,Protein,Fiber
-1,Egg,1,egg,,,,,
-2,Egg White,1,egg white,,,,,
-3,Liquid Egg Whites,25,g,,,,,
-4,Kodiak Cake Mix,,,,,,,
-5,Whey Protein Isolate,,,,,,,
-6,Oatmeal,,,,,,,
-7,Peanut Butter,,,,,,,
-8,Almond Butter,,,,,,,
-9,Almonds,,,,,,,
-10,Almond Milk (Unsweetened),,,,,,,
-11,Blueberries,,,,,,,
-12,Blackberries,,,,,,,
-13,Raspberries,,,,,,,
-14,Apple,,,,,,,
-15,Banana,,,,,,,
-16,Pear,,,,,,,
-17,Tangerine,,,,,,,
-18,Pineapple,,,,,,,
-19,Shredded Cheese (Fat Free),,,,,,,
-20,Shredded Cheese (Low Fat),,,,,,,
-21,Broccoli,,,,,,,
-22,Cauliflower,,,,,,,
-23,Carrots,,,,,,,
-24,Baby Corn,,,,,,,
-25,Kale,,,,,,,
-26,Spinach,,,,,,,
-27,Peas,,,,,,,
-28,Brussels Sprouts,,,,,,,
-29,Squash,,,,,,,
-30,Bell Pepper,,,,,,,
-31,Jalapeño,,,,,,,
-32,Tomato,,,,,,,
-33,Mushroom,,,,,,,
-34,Onion,,,,,,,
-35,White Potato,,,,,,,
-36,Sweet Potato,,,,,,,
-37,Black Beans,,,,,,,
-38,Pinto Beans,,,,,,,
-39,Brown Rice,,,,,,,
-40,White Rice,,,,,,,
-41,Quinoa,,,,,,,
-42,Tofu,,,,,,,
-43,Tempeh,,,,,,,
-44,Seitan,,,,,,,
-45,Chicken Breast,,,,,,,
-46,Chicken Tenderloin,,,,,,,
-47,Chicken Thigh,,,,,,,
-48,Pork Loin,,,,,,,
-49,Pork Chop,,,,,,,
-50,Ground Turkey (99% Lean),,,,,,,
-51,Ground Turkey (93% Lean),,,,,,,
-52,Ground Beef (96% Lean),,,,,,,
-53,Steak,,,,,,,
-54,Tilapia,,,,,,,
-55,Salmon,,,,,,,
-56,Tuna,,,,,,,
-57,Brown Rice Cake,,,,,,,
-58,Halo Top Ice Cream (240),,,,,,,
-59,Halo Top Ice Cream (280),,,,,,,
-60,Halo Top Ice Cream (320),,,,,,,
-61,Whole Wheat Bread,,,,,,,
+1,Egg,1,egg,72,5,0,60,0
+2,Egg White,1,egg,17,0,0,4,0
+3,Liquid Egg Whites,46,g,25,0,1,5,0
+4,Kodiak Cake Mix,53,g,190,2,30,14,5
+5,Whey Protein Isolate,36,g,120,1,3,24,0
+6,Oatmeal,40,g,150,3,27,5,4
+7,Peanut Butter,32,g,190,15,7,8,2
+8,Almond Butter,32,g,190,16,7,6,3
+9,Almonds,28,g,158,14,6,6,3
+10,Almond Milk (Unsweetened),240,g,30,3,1,1,1
+11,Blueberries,100,g,57,0,14,1,2
+12,Blackberries,100,g,43,0,10,1,5
+13,Raspberries,100,g,52,1,12,1,7
+14,Apple,154,g,80,0,22,1,3
+15,Banana,126,g,112,0,29,1,3
+16,Pear,161,g,92,0,25,1,5
+17,Tangerine,100,g,53,0,13,1,2
+18,Pineapple,100,g,50,0,13,1,1
+19,Shredded Cheese (Fat Free),28,g,46,0,2,9,0
+20,Shredded Cheese (Low Fat),28,g,70,5,1,8,0
+21,Broccoli,100,g,34,0,7,3,3
+22,Cauliflower,100,g,23,0,4,2,2
+23,Carrots,100,g,41,0,10,1,3
+24,Baby Corn,100,g,26,0,3,3,2
+25,Kale,100,g,49,1,9,4,4
+26,Spinach,100,g,23,0,4,3,2
+27,Peas,100,g,81,0,14,5,6
+28,Brussels Sprouts,100,g,46,1,3,4,4
+29,Squash,100,g,16,0,3,1,1
+30,Bell Pepper,100,g,20,0,5,1,2
+31,Jalapeño,100,g,29,0,7,1,3
+32,Tomato,100,g,18,0,4,1,1
+33,Mushroom,100,g,22,0,3,3,1
+34,Onion,100,g,40,0,9,1,2
+35,White Potato,100,g,93,0,21,3,2
+36,Sweet Potato,100,g,86,0,20,2,3
+37,Black Beans (uncooked),100,g,132,1,24,9,9
+38,Pinto Beans (uncooked),100,g,114,1,20,7,6
+39,Brown Rice (Cooked),100,g,111,1,23,3,2
+40,White Rice (Cooked),100,g,127,0,28,3,1
+41,Quinoa (uncooked),42,g,140,2,28,6,4
+42,Tofu,100,g,88,4,3,9,1
+43,Tempeh,100,g,193,11,9,19,0
+44,Seitan,100,g,114,2,9,21,0
+45,Chicken Breast,4,oz,136,2,0,26,0
+46,Chicken Tenderloin,4,oz,100,1,0,22,0
+47,Chicken Thigh,4,oz,121,4,0,20,0
+48,Pork Loin,4,oz,160,4,0,28,0
+49,Pork Chop,4,oz,162,7,0,24,0
+50,Ground Turkey (99% Lean),4,oz,120,2,0,27,0
+51,Ground Turkey (93% Lean),4,oz,140,7,0,21,0
+52,Ground Beef (96% Lean),4,oz,130,4,0,21,0
+53,Steak,4,oz,130,4,0,21,0
+54,Tilapia,4,oz,109,2,0,23,0
+55,Salmon,4,oz,161,7,0,22,0
+56,Tuna,4,oz,124,1,0,28,0
+57,Brown Rice Cake,1,cake,60,1,14,1,1
+58,Halo Top Ice Cream (240 calories),1,pint,240,6,44,24,12
+59,Halo Top Ice Cream (280 calories),1,pint,280,8,48,24,12
+60,Halo Top Ice Cream (320 calories),1,pint,320,12,56,20,12
+,Halo Top Ice Cream (360 calories),1,pint,360,12,64,20,12
+61,Whole Wheat Bread,1,slice,70,1,13,2,1
