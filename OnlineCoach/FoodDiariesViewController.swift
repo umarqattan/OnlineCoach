@@ -7,15 +7,25 @@
 //
 
 import UIKit
-
+import CoreData
 class FoodDiariesViewController: UIViewController {
-    
-    var theFoods:[Food] = []
+
+    var foods:[Food] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Food Diary"
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getFoods()
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +69,7 @@ class FoodDiariesViewController: UIViewController {
                     let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
             
                     if let jsonFoods = jsonObject as? [[String:Any]] {
-                        self.foods = jsonFoods
+                        
                         let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
                         let context = appDelegate.persistentContainer.viewContext
                         
@@ -67,16 +77,31 @@ class FoodDiariesViewController: UIViewController {
                         
                         for food in jsonFoods {
                             
-                            self.theFoods.append(Food(data: food, entity: entity!, insertInto: context))
+                            self.foods.append(Food(data: food, entity: entity!, insertInto: context))
                         }
                         appDelegate.saveContext()
-                        print("self.theFoods = \(self.theFoods)")
+                        print("self.theFoods = \(self.foods)")
                     }
                 }
             })
             dataTask.resume()
         }
-        print(self.theFoods)
+        print(self.foods)
     }
+    
+    
+    // MARK: prepareForSegue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SearchFoodViewControllerSegue" {
+            if let vc = segue.destination as? SearchFoodViewController {
+                vc.foods = foods
+                
+                print("ABOUT TO SEGUE with foods \(vc.foods)")
+            }
+        }
+    }
+    
+    
 }
 
