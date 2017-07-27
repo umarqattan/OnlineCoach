@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class UserInformationViewController: UIViewController, UITextFieldDelegate {
 
@@ -23,8 +24,8 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cancel: UIBarButtonItem!
     
     var data:[String:Any]?
-    
-    
+    var foods:[[String:Any]]?
+    var theFoods:[Food] = []
     
     
     
@@ -44,7 +45,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         
         
         
-        //makeHTTPCall()
+        getFoods()
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -63,48 +64,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    // TODO: Fix GET method
-//    func makeHTTPCall() {
-//        
-//        
-//        let headers = [
-//            "content-type": "application/json",
-//            "cache-control": "no-cache",
-//            "postman-token": "91003c5e-b2f4-ad33-e060-fbcda80f9070"
-//        ]
-//        
-//        
-//        do {
-//            
-//            
-//            let request = NSMutableURLRequest(url: NSURL(string: "https://healthtrackerx.azurewebsites.net/api/Foods")! as URL,
-//                                              cachePolicy: .useProtocolCachePolicy,
-//                                              timeoutInterval: 10.0)
-//            request.httpMethod = "GET"
-//            request.allHTTPHeaderFields = headers
-//            request.httpBody = nil
-//            request.addValue("0", forHTTPHeaderField: "Content-Length")
-//            
-//            let session = URLSession.shared
-//            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-//                if (error != nil) {
-//                    print(error)
-//                } else {
-//                    let httpResponse = response as? HTTPURLResponse
-//                    print(httpResponse)
-//                    
-//                    let string1 = String(data: data!, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-//                    print(string1)
-//                    
-//                }
-//            })
-//            
-//            dataTask.resume()
-//
-//        }
-//        
-//    }
-    
+
     
     // UI Helper Functions
     func setupUI() {
