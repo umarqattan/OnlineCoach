@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -19,7 +20,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        setupUI()
         loginButton.accessibilityIdentifier = "loginButton"
         registerHereButton.accessibilityIdentifier = "registerHereButton"
         // Do any additional setup after loading the view.
@@ -30,6 +31,57 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func setupUI() {
+        
+        
+        loginButton.isEnabled = false
+        usernameField.delegate = self
+        passwordField.delegate = self
+        usernameField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        passwordField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    
+    
+    // MARK: UITextFieldDelegate protocol methods
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        
+        if (usernameField.text?.characters.count)! > 0 && (passwordField.text?.characters.count)! > 0  {
+            loginButton.isEnabled = true
+            print("Text changed")
+        } else {
+            loginButton.isEnabled = false
+        }
+        
+        
+    }
+    
+    // MARK: UITextFieldDelegate protocol methods
+    
+    
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        
+        
+        
+    }
+    
+    @IBAction func login(_ sender: UIButton) {
+        HealthTrackerX().login(username: usernameField.text!, password: passwordField.text!)
+        
+        print("LOGGED IN!")
+        
+        print(usernameField.text!)
+        print(passwordField.text!)
+        
+        let diaryTabBarController = storyboard?.instantiateViewController(withIdentifier: "DiaryTabBarController") as! DiaryTabBarController
+        // TODO: SET THE USER HERE
+        
+        present(diaryTabBarController, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

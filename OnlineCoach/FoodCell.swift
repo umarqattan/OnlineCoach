@@ -34,7 +34,7 @@ class FoodCell: UITableViewCell {
         carbLabel.text = "\(food.carb)"
         proteinLabel.text = "\(food.protein)"
         fiberLabel.text = "\(food.fiber)"
-        print("CONFIGURED CELL!")
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

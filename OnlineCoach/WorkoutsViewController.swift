@@ -22,7 +22,7 @@ class WorkoutsViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
 }

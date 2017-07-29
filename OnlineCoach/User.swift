@@ -24,6 +24,8 @@ class User: NSManagedObject {
     @NSManaged var birthDate:String?
     @NSManaged var unit:String?
     @NSManaged var goal:String?
+    @NSManaged var username:String?
+    @NSManaged var password:String?
     
     
     
@@ -46,6 +48,8 @@ class User: NSManagedObject {
         age = (data?["age"] as? Int16)!
         unit = data?["unit"] as? String
         goal = data?["goal"] as? String
+        username = data?["username"] as? String
+        password = data?["password"] as? String
         
     }
     

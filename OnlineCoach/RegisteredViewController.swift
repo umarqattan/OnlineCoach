@@ -16,7 +16,7 @@ class RegisteredViewController: UIViewController {
     
     @IBOutlet weak var youRegisteredLabel: UILabel!
     var data:[String:Any]?
-    
+    var user:User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class RegisteredViewController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         
-        let user = User(data: data, entity: entity!, insertInto: context)
+        user = User(data: data, entity: entity!, insertInto: context)
         
         
         print(user.description)
@@ -60,6 +60,14 @@ class RegisteredViewController: UIViewController {
         youRegisteredLabel.accessibilityIdentifier = "youRegisteredLabel"
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ViewDiarySegue" {
+            if let c = segue.destination as? DiaryTabBarController {
+                c.user = user
+            }
+        }
+    }
     
     
     /*

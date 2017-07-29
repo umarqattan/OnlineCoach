@@ -13,6 +13,7 @@ class SearchFoodViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var addFoodButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     var foods:[Food] = []
     
     
@@ -81,6 +82,11 @@ class SearchFoodViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.configure(food: foods[indexPath.row])
             
         return cell
+        
+    }
+    
+    // MARK: Helper functions
+    func setupUI() {
         
     }
 

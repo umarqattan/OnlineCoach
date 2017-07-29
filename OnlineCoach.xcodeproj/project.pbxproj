@@ -26,8 +26,11 @@
 		E1E208EF1F295E30003F1E38 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E208EE1F295E30003F1E38 /* Food.swift */; };
 		E1E208F11F297E00003F1E38 /* SearchFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E208F01F297E00003F1E38 /* SearchFoodViewController.swift */; };
 		E1E208F31F2985C7003F1E38 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E208F21F2985C7003F1E38 /* FoodCell.swift */; };
+		E1E208F51F2AB1BD003F1E38 /* AuthenticationInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E208F41F2AB1BD003F1E38 /* AuthenticationInformationViewController.swift */; };
 		E1F26D821F213EBD001E87BB /* GoalsInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */; };
 		E1F26D841F216A14001E87BB /* RegisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D831F216A14001E87BB /* RegisteredViewController.swift */; };
+		E1F54C4D1F2C0DDE00D7B463 /* DiaryTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F54C4C1F2C0DDE00D7B463 /* DiaryTabBarControllerViewController.swift */; };
+		E1F54C4F1F2C1F7B00D7B463 /* HealthTrackerX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F54C4E1F2C1F7B00D7B463 /* HealthTrackerX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +76,11 @@
 		E1E208EE1F295E30003F1E38 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		E1E208F01F297E00003F1E38 /* SearchFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFoodViewController.swift; sourceTree = "<group>"; };
 		E1E208F21F2985C7003F1E38 /* FoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		E1E208F41F2AB1BD003F1E38 /* AuthenticationInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationInformationViewController.swift; sourceTree = "<group>"; };
 		E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsInformationViewController.swift; sourceTree = "<group>"; };
 		E1F26D831F216A14001E87BB /* RegisteredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteredViewController.swift; sourceTree = "<group>"; };
+		E1F54C4C1F2C0DDE00D7B463 /* DiaryTabBarControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTabBarControllerViewController.swift; sourceTree = "<group>"; };
+		E1F54C4E1F2C1F7B00D7B463 /* HealthTrackerX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTrackerX.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +167,9 @@
 				E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */,
 				E16A596E1F1E8387008A23A6 /* BodyInformationViewController.swift */,
 				E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */,
+				E1E208F41F2AB1BD003F1E38 /* AuthenticationInformationViewController.swift */,
 				E1F26D831F216A14001E87BB /* RegisteredViewController.swift */,
+				E1F54C4C1F2C0DDE00D7B463 /* DiaryTabBarControllerViewController.swift */,
 				E16A596A1F1E8280008A23A6 /* FoodDiariesViewController.swift */,
 				E1E208F01F297E00003F1E38 /* SearchFoodViewController.swift */,
 				E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */,
@@ -195,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				E18807681F23D66E00CF773D /* DateExtensions.swift */,
+				E1F54C4E1F2C1F7B00D7B463 /* HealthTrackerX.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -351,13 +360,16 @@
 				E14E5BD61F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld in Sources */,
 				E1F26D841F216A14001E87BB /* RegisteredViewController.swift in Sources */,
 				E1F26D821F213EBD001E87BB /* GoalsInformationViewController.swift in Sources */,
+				E1F54C4F1F2C1F7B00D7B463 /* HealthTrackerX.swift in Sources */,
 				E14E5BD01F1DE9E7000538F9 /* UserInformationViewController.swift in Sources */,
+				E1E208F51F2AB1BD003F1E38 /* AuthenticationInformationViewController.swift in Sources */,
 				E18807691F23D66E00CF773D /* DateExtensions.swift in Sources */,
 				E1E208EF1F295E30003F1E38 /* Food.swift in Sources */,
 				E16A596D1F1E8290008A23A6 /* WorkoutsViewController.swift in Sources */,
 				E14E5BCE1F1DE9E7000538F9 /* AppDelegate.swift in Sources */,
 				E136B05C1F2194AC00B0FF9D /* User.swift in Sources */,
 				E1E208F11F297E00003F1E38 /* SearchFoodViewController.swift in Sources */,
+				E1F54C4D1F2C0DDE00D7B463 /* DiaryTabBarControllerViewController.swift in Sources */,
 				E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */,
 				E1E208ED1F26B017003F1E38 /* LoginViewController.swift in Sources */,
 				E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */,

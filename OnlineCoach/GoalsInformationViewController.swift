@@ -84,7 +84,7 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func next(_ sender: UIButton) {
-        print("YOU REGISTERED!")
+        print("SUCCESSFULLY FILLED OUT GOALS INFORMATION!")
 
     }
    
@@ -100,8 +100,8 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
      */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RegisteredViewControllerSegue" {
-            let vc = segue.destination as? RegisteredViewController
+        if segue.identifier == "AuthenticationInformationViewControllerSegue" {
+            let vc = segue.destination as? AuthenticationInformationViewController
             
             data?["goal"] = goalControl.titleForSegment(at: goalControl.selectedSegmentIndex)
             vc?.data = data

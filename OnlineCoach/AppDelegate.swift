@@ -14,12 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var foods:[Food] = []
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         if CommandLine.arguments.contains("--uitesting") {
             print("We are unit testing...")
         }
+        
+        
+        // Get Foods for the first time, because they will not change
+        getFoods()
 
         
         return true
@@ -51,6 +56,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
 
+    func getFoods() {
+        let urlString:String = "https://healthtrackerx.azurewebsites.net/api/Foods"
+        let url:URL = URL(string: urlString)!
+        let httpMethod:String = "GET"
+        let contentType:String = "application/json"
+        let cacheControl:String = "no-cache"
+        let contentLength = "0"
+        
+        let allHeaderFields:[String: String]? = [
+            "content-type" : contentType,
+            "cache-control":cacheControl,
+            "content-length": contentLength
+        ]
+        
+        do {
+            let request = NSMutableURLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+            
+            request.httpMethod = httpMethod
+            request.allHTTPHeaderFields = allHeaderFields
+            request.httpBody = nil
+            
+            let session = URLSession.shared
+            
+            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+                if error != nil {
+                    print(error!)
+                } else {
+                    let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
+                    
+                    if let jsonFoods = jsonObject as? [[String:Any]] {
+                        
+                        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                        let context = appDelegate.persistentContainer.viewContext
+                        
+                        let entity = NSEntityDescription.entity(forEntityName: "Food", in: context)
+                        
+                        for food in jsonFoods {
+                            
+                            self.foods.append(Food(data: food, entity: entity!, insertInto: context))
+                        }
+                        appDelegate.saveContext()
+                        
+                    }
+                }
+            })
+            dataTask.resume()
+        }
+        
+    }
+    
+
+    
     
     
     
