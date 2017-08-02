@@ -73,10 +73,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="h2y-9v-H9V">
+                                <rect key="frame" x="177" y="293" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="00l-0L-bbT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="288" id="ExQ-Rc-jGE"/>
+                            <constraint firstItem="h2y-9v-H9V" firstAttribute="centerY" secondItem="00l-0L-bbT" secondAttribute="centerY" id="Fp5-mU-5tN"/>
                             <constraint firstItem="WXT-by-LYv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="173" id="Gtx-no-nko"/>
                             <constraint firstItem="RoF-qS-yyi" firstAttribute="top" secondItem="WXT-by-LYv" secondAttribute="bottom" constant="16" id="PCm-yX-4VZ"/>
                             <constraint firstItem="yny-85-upA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="aIm-m7-z4D"/>
@@ -96,10 +100,12 @@
                             <constraint firstItem="WXT-by-LYv" firstAttribute="leading" secondItem="RoF-qS-yyi" secondAttribute="leading" id="q2Q-qA-Rlt"/>
                             <constraint firstItem="yny-85-upA" firstAttribute="centerX" secondItem="00l-0L-bbT" secondAttribute="centerX" id="qAA-L5-19R"/>
                             <constraint firstItem="iBl-ZZ-kUP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="43" id="v5R-cl-xcD"/>
+                            <constraint firstItem="h2y-9v-H9V" firstAttribute="trailing" secondItem="iBl-ZZ-kUP" secondAttribute="trailing" id="xGF-Jc-NAr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WSU-0x-rYB"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="h2y-9v-H9V" id="eY8-BU-PlE"/>
                         <outlet property="loginButton" destination="00l-0L-bbT" id="Sje-x8-3bY"/>
                         <outlet property="passwordField" destination="RoF-qS-yyi" id="3d8-4G-bdN"/>
                         <outlet property="registerHereButton" destination="3Z3-RO-WHP" id="X9M-ZG-2LQ"/>

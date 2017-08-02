@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 import CoreData
 
+
+
 class HealthTrackerX {
+    
     
     
     let Token:String = "Token"
@@ -38,6 +41,9 @@ class HealthTrackerX {
         var accessToken:String!
         var tokenType:String!
         
+        
+        
+        
         let tokenPostData = NSMutableData(data: "grant_type=password".data(using: .utf8)!)
         tokenPostData.append("&username=\(username)".data(using: .utf8)!)
         tokenPostData.append("&password=\(password)".data(using: .utf8)!)
@@ -49,7 +55,11 @@ class HealthTrackerX {
         request.allHTTPHeaderFields = tokenHeaders
         request.httpBody = tokenPostData as Data
         
-        let session = URLSession.shared
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
             if error != nil {
@@ -63,7 +73,9 @@ class HealthTrackerX {
                         accessToken = t_accessToken
                         tokenType = t_tokenType
                         print("GOT TOKEN: \(accessToken)")
-                        HealthTrackerX().getClient(from: accessToken, tokenType: tokenType)
+                        DispatchQueue.main.async {
+                            HealthTrackerX().getClient(from: accessToken, tokenType: tokenType)
+                        }
                     }
                 }
             }
@@ -102,9 +114,11 @@ class HealthTrackerX {
                     if let t_clientUserId = jsonClient["clientUserId"] as? String {
                         clientUserId = t_clientUserId
                         
-                        HealthTrackerX().getClientDiary(from: clientUserId, accessToken: accessToken, tokenType: tokenType, completionHandler: { (clientFoodDiary, clientExerciseDiary) -> Void in
-                            
-                        })
+                        DispatchQueue.main.async {
+                            HealthTrackerX().getClientDiary(from: clientUserId, accessToken: accessToken, tokenType: tokenType, completionHandler: { (clientFoodDiary, clientExerciseDiary) -> Void in
+                                
+                            })
+                        }
                     }
                 }
             }
@@ -153,11 +167,14 @@ class HealthTrackerX {
                         if let t_clientExerciseDiary = t_client["joinedExerciseEntry"] as? [[String:Any]] {
                             clientExerciseDiary = t_clientExerciseDiary
                         }
-                        print("CLIENT: \(client)")
-                        print("CLIENT FOOD DIARY: \(clientFoodDiary)")
-                        print("CLIENT EXERCISE DIARY: \(clientExerciseDiary)")
-
-                        print("Finally...")
+                        
+                        DispatchQueue.main.async {
+                            print("CLIENT: \(client)")
+                            print("CLIENT FOOD DIARY: \(clientFoodDiary)")
+                            print("CLIENT EXERCISE DIARY: \(clientExerciseDiary)")
+                            print("Finally...")
+                            
+                        }
                         completionHandler(clientFoodDiary, clientExerciseDiary)
                     }
                 }

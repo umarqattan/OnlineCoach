@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E12D0C3F1F316E18004B3DAF /* CoachClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12D0C3E1F316E18004B3DAF /* CoachClient.swift */; };
+		E12D0C411F316E35004B3DAF /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12D0C401F316E35004B3DAF /* DiaryEntry.swift */; };
 		E136B05C1F2194AC00B0FF9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136B05B1F2194AC00B0FF9D /* User.swift */; };
 		E14E5BCE1F1DE9E7000538F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BCD1F1DE9E7000538F9 /* AppDelegate.swift */; };
 		E14E5BD01F1DE9E7000538F9 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E5BCF1F1DE9E7000538F9 /* UserInformationViewController.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E12D0C3E1F316E18004B3DAF /* CoachClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachClient.swift; sourceTree = "<group>"; };
+		E12D0C401F316E35004B3DAF /* DiaryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntry.swift; sourceTree = "<group>"; };
 		E136B05B1F2194AC00B0FF9D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E14E5BCA1F1DE9E7000538F9 /* OnlineCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E5BCD1F1DE9E7000538F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 				E14E5BD41F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld */,
 				E136B05B1F2194AC00B0FF9D /* User.swift */,
 				E1E208EE1F295E30003F1E38 /* Food.swift */,
+				E12D0C3E1F316E18004B3DAF /* CoachClient.swift */,
+				E12D0C401F316E35004B3DAF /* DiaryEntry.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -355,8 +361,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1DB8B421F25DE8100728173 /* AzureHealthTracker.swift in Sources */,
+				E12D0C3F1F316E18004B3DAF /* CoachClient.swift in Sources */,
 				E1E208F31F2985C7003F1E38 /* FoodCell.swift in Sources */,
 				E16A596B1F1E8280008A23A6 /* FoodDiariesViewController.swift in Sources */,
+				E12D0C411F316E35004B3DAF /* DiaryEntry.swift in Sources */,
 				E14E5BD61F1DE9E7000538F9 /* OnlineCoach.xcdatamodeld in Sources */,
 				E1F26D841F216A14001E87BB /* RegisteredViewController.swift in Sources */,
 				E1F26D821F213EBD001E87BB /* GoalsInformationViewController.swift in Sources */,
