@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1171C981F36DA5C0002BD28 /* CoachClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1171C971F36DA5C0002BD28 /* CoachClientsViewController.swift */; };
+		E1171C9A1F36DB600002BD28 /* ClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1171C991F36DB600002BD28 /* ClientCell.swift */; };
 		E12D0C3F1F316E18004B3DAF /* CoachClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12D0C3E1F316E18004B3DAF /* CoachClient.swift */; };
 		E12D0C411F316E35004B3DAF /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12D0C401F316E35004B3DAF /* DiaryEntry.swift */; };
 		E136B05C1F2194AC00B0FF9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136B05B1F2194AC00B0FF9D /* User.swift */; };
@@ -31,6 +33,7 @@
 		E1E208F51F2AB1BD003F1E38 /* AuthenticationInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E208F41F2AB1BD003F1E38 /* AuthenticationInformationViewController.swift */; };
 		E1F26D821F213EBD001E87BB /* GoalsInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */; };
 		E1F26D841F216A14001E87BB /* RegisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F26D831F216A14001E87BB /* RegisteredViewController.swift */; };
+		E1F457771F329B4A000696AD /* NotificationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F457761F329B4A000696AD /* NotificationExtensions.swift */; };
 		E1F54C4D1F2C0DDE00D7B463 /* DiaryTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F54C4C1F2C0DDE00D7B463 /* DiaryTabBarControllerViewController.swift */; };
 		E1F54C4F1F2C1F7B00D7B463 /* HealthTrackerX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F54C4E1F2C1F7B00D7B463 /* HealthTrackerX.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1171C971F36DA5C0002BD28 /* CoachClientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachClientsViewController.swift; sourceTree = "<group>"; };
+		E1171C991F36DB600002BD28 /* ClientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientCell.swift; sourceTree = "<group>"; };
 		E12D0C3E1F316E18004B3DAF /* CoachClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachClient.swift; sourceTree = "<group>"; };
 		E12D0C401F316E35004B3DAF /* DiaryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntry.swift; sourceTree = "<group>"; };
 		E136B05B1F2194AC00B0FF9D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -83,6 +88,7 @@
 		E1E208F41F2AB1BD003F1E38 /* AuthenticationInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationInformationViewController.swift; sourceTree = "<group>"; };
 		E1F26D811F213EBD001E87BB /* GoalsInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsInformationViewController.swift; sourceTree = "<group>"; };
 		E1F26D831F216A14001E87BB /* RegisteredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteredViewController.swift; sourceTree = "<group>"; };
+		E1F457761F329B4A000696AD /* NotificationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationExtensions.swift; sourceTree = "<group>"; };
 		E1F54C4C1F2C0DDE00D7B463 /* DiaryTabBarControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		E1F54C4E1F2C1F7B00D7B463 /* HealthTrackerX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTrackerX.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +184,7 @@
 				E1E208F01F297E00003F1E38 /* SearchFoodViewController.swift */,
 				E16A596C1F1E8290008A23A6 /* WorkoutsViewController.swift */,
 				E16A59741F1EA8F6008A23A6 /* SettingsViewController.swift */,
+				E1171C971F36DA5C0002BD28 /* CoachClientsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 				E14E5BD91F1DE9E7000538F9 /* LaunchScreen.storyboard */,
 				E14E5BD11F1DE9E7000538F9 /* Main.storyboard */,
 				E1E208F21F2985C7003F1E38 /* FoodCell.swift */,
+				E1171C991F36DB600002BD28 /* ClientCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 			children = (
 				E18807681F23D66E00CF773D /* DateExtensions.swift */,
 				E1F54C4E1F2C1F7B00D7B463 /* HealthTrackerX.swift */,
+				E1F457761F329B4A000696AD /* NotificationExtensions.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -362,6 +371,7 @@
 			files = (
 				E1DB8B421F25DE8100728173 /* AzureHealthTracker.swift in Sources */,
 				E12D0C3F1F316E18004B3DAF /* CoachClient.swift in Sources */,
+				E1171C9A1F36DB600002BD28 /* ClientCell.swift in Sources */,
 				E1E208F31F2985C7003F1E38 /* FoodCell.swift in Sources */,
 				E16A596B1F1E8280008A23A6 /* FoodDiariesViewController.swift in Sources */,
 				E12D0C411F316E35004B3DAF /* DiaryEntry.swift in Sources */,
@@ -378,6 +388,8 @@
 				E136B05C1F2194AC00B0FF9D /* User.swift in Sources */,
 				E1E208F11F297E00003F1E38 /* SearchFoodViewController.swift in Sources */,
 				E1F54C4D1F2C0DDE00D7B463 /* DiaryTabBarControllerViewController.swift in Sources */,
+				E1171C981F36DA5C0002BD28 /* CoachClientsViewController.swift in Sources */,
+				E1F457771F329B4A000696AD /* NotificationExtensions.swift in Sources */,
 				E16A596F1F1E8387008A23A6 /* BodyInformationViewController.swift in Sources */,
 				E1E208ED1F26B017003F1E38 /* LoginViewController.swift in Sources */,
 				E16A59751F1EA8F6008A23A6 /* SettingsViewController.swift in Sources */,

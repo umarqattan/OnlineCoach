@@ -10,40 +10,50 @@ import UIKit
 
 class AuthenticationInformationViewController: UIViewController, UITextFieldDelegate {
 
-    var data:[String:Any]?
+    var data:[String:Any]!
     
-    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var secondPasswordField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var checkImageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         setupAccessibility()
         setupUI()
-        // Do any additional setup after loading the view.
         
         
+    }
+    
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: .UserAlreadyExistsReceivedNotification, object: nil)
     }
 
     // UI Helper functions
     
     func setupUI() {
         nextButton.isEnabled = false
-        usernameField.delegate = self
+        emailAddressField.delegate = self
         passwordField.delegate = self
         secondPasswordField.delegate = self
-        usernameField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        emailAddressField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         passwordField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         secondPasswordField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        nextButton.isEnabled = false
         
     }
     
     func setupAccessibility() {
-        usernameField.accessibilityIdentifier = "usernameField"
+        emailAddressField.accessibilityIdentifier = "emailAddressField"
         passwordField.accessibilityIdentifier = "passwordField"
         secondPasswordField.accessibilityIdentifier = "secondPasswordField"
     }
@@ -51,23 +61,138 @@ class AuthenticationInformationViewController: UIViewController, UITextFieldDele
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.title = "Authentication"
         
+        NotificationCenter.default.addObserver(self, selector: #selector(AuthenticationInformationViewController.userAlreadyExistsNotification(_:)), name: .UserAlreadyExistsReceivedNotification, object: nil)
+        
+        
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func Check(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+            self.checkButton.isHidden = true
+            self.checkIfUserExists()
+        }
+        
     }
     
 
     @IBAction func next(_ sender: UIButton) {
-         print("SUCCESSFULLY FILLED OUT AUTHENTICATION INFORMATION!")
+        
+        registerUser()
+        
     }
+    
+    
+    func userAlreadyExistsNotification(_ notification:NSNotification) {
+        let userInfo = notification.userInfo as! [String:Bool]
+        
+        
+        
+        if !userInfo["available"]! {
+            DispatchQueue.main.async {
+                
+                // TODO: Add Alert View when user already exists
+                self.checkButton.backgroundColor = UIColor.red
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.checkButton.isHidden = true
+                self.nextButton.isEnabled = true
+                self.checkImageView.image = UIImage(named: "icons8-Ok-32")
+            }
+            
+        }
+        
+    }
+    
+    func checkIfUserExists() {
+    
+        let headers = [
+            "cache-control": "no-cache",
+            "postman-token": "aecff94d-798d-78e2-79f9-209dfe5f7c31"
+        ]
+        
+        let request = NSMutableURLRequest(url: NSURL(string: "https://healthtrackerx.azurewebsites.net/api/Account/UserNameAvailable?un=\(self.data["firstName"]!)")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error)
+            } else {
+                let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
+                
+                DispatchQueue.main.async {
+                    let available = (jsonObject! as! [String:Any])["available"] as! Bool
+                    let userInfo:[String:Bool] = ["available": available]
+                    
+                    self.activityIndicator.stopAnimating()
+                    
+                    NotificationCenter.default.post(name: .UserAlreadyExistsReceivedNotification, object: nil, userInfo: userInfo)
+                }
+            }
+        })
+        
+        dataTask.resume()
+    }
+    
+        
+        
+        
+        
+        
+        
+    
+    
+    func registerUser() {
+        let headers = [
+            "content-type": "application/json",
+            "cache-control": "no-cache",
+
+            ]
+
+
+
+        let postData = try! JSONSerialization.data(withJSONObject: data, options: [])
+
+        let request = NSMutableURLRequest(url: NSURL(string: "https://healthtrackerx.azurewebsites.net/api/Account/CreateUser")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+        request.httpBody = postData as Data
+
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                //print(error)
+            } else {
+                //let httpResponse = response as? HTTPURLResponse
+                let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
+
+                DispatchQueue.main.async {
+                    
+                    
+                    
+                    
+                }
+            }
+        })
+
+        dataTask.resume()
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RegisteredViewControllerSegue" {
             let vc = segue.destination as? RegisteredViewController
             
-            data?["username"] = usernameField.text
-            data?["password"] = passwordField.text
+            data["emailAddress"] = emailAddressField.text!
+            data["password"] = passwordField.text!
             
             vc?.data = data
         }
@@ -79,7 +204,7 @@ class AuthenticationInformationViewController: UIViewController, UITextFieldDele
     
     func textFieldDidChange(_ textField: UITextField) {
         
-        if (usernameField.text?.characters.count)! > 0 && (passwordField.text?.characters.count)! > 0 && secondPasswordField.text == passwordField.text {
+        if (emailAddressField.text?.characters.count)! > 0 && (passwordField.text?.characters.count)! > 0 && secondPasswordField.text == passwordField.text {
             nextButton.isEnabled = true
             print("Text changed")
         } else {

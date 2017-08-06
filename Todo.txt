@@ -1,0 +1,31 @@
+Register
+
+[ ] Check if email is valid or not
+	[ ] Check if email address is available
+
+Login
+
+[ ] Login as Coach, get clients, populate tableView, click cell, go to client's diary
+
+[ ] Login as Client, go straight to Diary
+
+
+
+Food Diary
+
+[ ] Add a food to a client's food diary
+
+[ ] Add food from search food view controller
+	[  ] Update number of servings of food
+	[  ] Add modified amount to client's food diary
+    [  ] Add multiple foods
+
+
+Exercise Diary
+
+[ ] Add an exercise to a client's exercise diary
+
+[ ] Add exercise from search exercise view controller
+	[  ] Update number of sets/reps/weight
+	[  ] Add modified sets/reps/weight to exercise view controller
+    [  ] Add multiple exercises

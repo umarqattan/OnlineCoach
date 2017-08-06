@@ -12,7 +12,7 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
     
     
 
-    var data:[String:Any]?
+    var data:[String:Any]!
    
 
     @IBOutlet weak var goalControl: UISegmentedControl!
@@ -103,7 +103,7 @@ class GoalsInformationViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "AuthenticationInformationViewControllerSegue" {
             let vc = segue.destination as? AuthenticationInformationViewController
             
-            data?["goal"] = goalControl.titleForSegment(at: goalControl.selectedSegmentIndex)
+            data?["intensity"] = Int16(goalControl.selectedSegmentIndex)
             vc?.data = data
         }
         

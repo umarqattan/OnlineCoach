@@ -12,45 +12,46 @@ import Foundation
 
 class User: NSManagedObject {
 
-    @NSManaged var firstName:String?
-    @NSManaged var lastName:String?
-    @NSManaged var emailAddress:String?
-    @NSManaged var phoneNumber:String?
-    @NSManaged var isClient:Bool
+
+    
+    
+    
+    @NSManaged var birthdate:String
+    @NSManaged var myUserId:String
+    @NSManaged var emailAddress:String
+    @NSManaged var firstName:String
+    @NSManaged var lastName:String
+    @NSManaged var intensity:Int16
     @NSManaged var isCoach:Bool
-    @NSManaged var height:String?
+    
+    @NSManaged var phoneNumber:String
+    @NSManaged var height:Int16
     @NSManaged var weight:Float
-    @NSManaged var age:Int16
-    @NSManaged var birthDate:String?
-    @NSManaged var unit:String?
-    @NSManaged var goal:String?
-    @NSManaged var username:String?
-    @NSManaged var password:String?
-    
-    
+    @NSManaged var isMetric:Bool
+    @NSManaged var password:String
     
     override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
     }
     
-    convenience init(data:[String:Any]?, entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+    convenience init(data:[String:Any], entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         self.init(entity: entity, insertInto: context)
         
-        firstName = data?["firstName"] as? String
-        lastName = data?["lastName"] as? String
-        emailAddress = data?["emailAddress"] as? String
-        phoneNumber = data?["phoneNumber"] as? String
-        isClient = data?["isClient"] as! Bool
-        isCoach = data?["isCoach"] as! Bool
-        height = data?["height"] as? String
-        weight = (data?["weight"] as? Float)!
-        birthDate = data?["birthDate"] as? String
-        age = (data?["age"] as? Int16)!
-        unit = data?["unit"] as? String
-        goal = data?["goal"] as? String
-        username = data?["username"] as? String
-        password = data?["password"] as? String
         
+        
+        birthdate = data["birthdate"] as! String
+        myUserId = data["myUserId"] as! String
+        intensity = data["intensity"] as! Int16
+        firstName = data["firstName"] as! String
+        lastName = data["lastName"] as! String
+        emailAddress = data["emailAddress"] as! String
+        isCoach = data["isCoach"] as! Bool
+        phoneNumber = data["phoneNumber"] as! String
+        height = data["height"] as! Int16
+        isMetric = data["isMetric"] as! Bool
+        password = data["password"] as! String
+        weight = data["weight"] as! Float
+    
     }
     
 }

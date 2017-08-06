@@ -30,6 +30,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var accessToken:String!
     var tokenType:String!
     var clientUserId:String!
+    var clientsDiaries:String = ""
+    var isCoach:Bool!
     
     let Token:String = "Token"
     let API:String = "api"
@@ -39,7 +41,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     let Client:String = "Client"
     let Diary:String = "Diary"
     let query:String = "?uid="
-    
+    let Welcome:String = "Account/Welcome"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    // Step 3
+    // Step 4
     func userDiariesReceivedNotification(_ notification: NSNotification) {
         let userInfo = notification.userInfo as! [String:Any]
         
@@ -83,32 +85,63 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             
             
-            var textViewString = ""
+           
             
             for food in foodDiaryEntries {
-                textViewString += ("\n" + food.description())
+                self.clientsDiaries += ("\n" + food.description())
             }
             
             for exercise in exerciseDiaryEntries {
-                textViewString += ("\n" + exercise.description())
+                self.clientsDiaries += ("\n" + exercise.description())
             }
             
+            
+            print(self.clientsDiaries)
             self.activityIndicator.stopAnimating()
-            print(textViewString)
+            
+            
             self.loginButton.backgroundColor = UIColor(red: 0/255.0, green: 128.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-            self.loginButton.titleLabel?.text = "   ☑️"
+            self.loginButton.titleLabel?.text = "Logged In"
             self.loginButton.isEnabled = false
+            
+            
         }
+    }
+    
+    // Step 3
+    func welcomeCoachReceivedNotification(_ notification: NSNotification) {
+        
+        DispatchQueue.main.async {
+            
+        }
+        // login to coach's clients list view controller
+        
     }
     
     
     // Step 2
     func userIdReceivedNotification(_ notification: NSNotification) {
-        let userInfo = notification.userInfo as! [String : String]
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.userDiariesReceivedNotification(_:)), name: .UserDiariesReceivedNotification, object: nil)
+        let userInfo = notification.userInfo as! [String : Bool]
+        
         DispatchQueue.main.async {
             
-            self.getClientDiary(from: userInfo["clientUserId"]!, accessToken: self.accessToken, tokenType: self.tokenType)
+            
+            let receivedIsCoach = userInfo["isCoach"]!
+            if receivedIsCoach {
+                
+                print("WELCOME COACH!")
+                NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.welcomeCoachReceivedNotification(_:)), name: .WelcomeCoachReceivedNotification, object: nil)
+                    self.isCoach = true
+                    self.segueToCoachClientsViewController()
+                // TODO segue to clients list view controller
+                
+            } else {
+                self.isCoach = false
+                print("WELCOME CLIENT!")
+                // TODO segue to client's diary
+            }
+            
+            
             
         }
     }
@@ -117,23 +150,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func accessTokenReceivedNotification(_ notification: NSNotification) {
         
         
+        
+        
         let userInfo = notification.userInfo as! [String: String]
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.userIdReceivedNotification(_ :)), name: .UserIdReceivedNotification, object: nil)
-        
         
         
         DispatchQueue.main.async {
             
             self.accessToken = userInfo["access_token"]
             self.tokenType = userInfo["token_type"]
-            
-            
-            
-            self.getClient(from: self.accessToken, tokenType: self.tokenType)
-            
+            self.getCoach(from: self.accessToken, tokenType: self.tokenType)
             
         }
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -143,46 +172,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func getToken(_ sender: UIButton) {
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.accessTokenReceivedNotification(_ :)), name: .AccessTokenReceivedNotification, object: nil)
-        
-        getToken(username: "jj@gmail.com", password: "aa")
-        
-        //activityIndicator.startAnimating()
-    }
-
-    @IBAction func getUserId(_ sender: UIButton) {
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.userIdReceivedNotification(_ :)), name: .UserIdReceivedNotification, object: nil)
-        
-        getClient(from: self.accessToken, tokenType: self.tokenType)
-        
-        //activityIndicator.startAnimating()
-    }
-    
-    @IBAction func getUserDiaries(_ sender: UIButton) {
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.userDiariesReceivedNotification(_:)), name: .UserDiariesReceivedNotification, object: nil)
-        
-        getClientDiary(from: self.clientUserId, accessToken: self.accessToken, tokenType: self.tokenType)
-        
-        //activityIndicator.startAnimating()
-        
-        
-    }
-    
-    
     func login(username: String, password:String) {
         
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.accessTokenReceivedNotification(_ :)), name: .AccessTokenReceivedNotification, object: nil)
         
-        activityIndicator.startAnimating()
+        
         getToken(username: username, password: password)
-        loginButton.titleLabel?.text = "           "
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+        }
+        
     }
-    
-    
-    
     
     func getToken(username: String, password:String) {
         
@@ -190,10 +190,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             "content-type": "application/x-www-form-urlencoded",
             "cache-control": "no-cache"
         ]
-        
-        
-        
-        
+
         let tokenPostData = NSMutableData(data: "grant_type=password".data(using: .utf8)!)
         tokenPostData.append("&username=\(username)".data(using: .utf8)!)
         tokenPostData.append("&password=\(password)".data(using: .utf8)!)
@@ -228,6 +225,53 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     let userInfo:[String:String] = ["access_token" : accessToken, "token_type": tokenType]
                     NotificationCenter.default.post(name: .AccessTokenReceivedNotification, object: nil, userInfo: userInfo)
+                }
+            }
+        })
+        dataTask.resume()
+    }
+    
+    func getCoach(from accessToken:String, tokenType:String) {
+        
+        let clientHeaders = [
+            "authorization" : "\(tokenType.capitalized) \(accessToken)",
+            "cache-control" : "no-cache"
+        ]
+        
+        let clientURL = NSURL(string: baseURL+API+"/"+Welcome)! as URL
+        
+        let request = NSMutableURLRequest(url: clientURL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        
+        request.httpMethod = GET.uppercased()
+        request.allHTTPHeaderFields = clientHeaders
+        
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            } else {
+                
+                let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
+                
+                
+                DispatchQueue.main.async {
+                    //let clientUserId = ((jsonObject! as! [Any])[0] as! [String:Any])["clientUserId"] as! String
+                    
+                    
+                    let object = jsonObject! as! [String:Any]
+                    print("object = \(object)")
+                    
+                    
+                   let isCoach = object["isCoach"] as! Bool
+                    
+                    
+                    
+
+                    let userInfo = ["isCoach" : isCoach]
+                    NotificationCenter.default.post(name: .UserIdReceivedNotification, object: nil, userInfo: userInfo)
+                    
                 }
             }
         })
@@ -303,8 +347,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
                 
                 DispatchQueue.main.async {
-                    print(jsonObject!)
-                    
                     
                     var clients:[CoachClient] = []
                     
@@ -342,13 +384,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         dataTask.resume()
     }
-
-
-        // Do any additional setup after loading the view.
-
-   
-
-    
     
     // MARK: UITextFieldDelegate protocol methods
     
@@ -365,48 +400,75 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: UITextFieldDelegate protocol methods
-    
-    
+
+    func segueToCoachClientsViewController() {
+        
+        
+    }
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
         
-        
-        
     }
     
     @IBAction func login(_ sender: UIButton) {
         self.login(username: usernameField.text!, password: passwordField.text!)
-        
-        
-        
-        
-        
-        //HealthTrackerX().login(username: usernameField.text!, password: passwordField.text!)
-        
-        //let diaryTabBarController = storyboard?.instantiateViewController(withIdentifier: "DiaryTabBarController") as! DiaryTabBarController
-        // TODO: SET THE USER HERE
-        
-        //present(diaryTabBarController, animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "CoachClientsViewControllerSegue" {
+            
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.viewControllers.first as! CoachClientsViewController
+            
+            let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+            let context = appDelegate.persistentContainer.viewContext
+            let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
+            
+            let data1 = [
+                "firstName" : "Umar",
+                "lastName" : "Qattan",
+                "birthdate" : "September 10, 1994",
+                "emailAddress" : "u.qattan@gmail.com",
+                "phoneNumber" : "8053124900",
+                "isCoach" : false,
+                "height" : Int16(72),
+                "isMetric" : false,
+                "intensity" : Int16(0),
+                "myUserId" : "",
+                "password": "1234",
+                "weight" : Float(160.0)
+            ] as [String : Any]
+            
+            let data2 = [
+                "firstName" : "John",
+                "lastName" : "Goodlad",
+                "birthdate" : "September 22, 1994",
+                "emailAddress" : "johnny@gmail.com",
+                "phoneNumber" : "1234567890",
+                "isCoach" : false,
+                "height" : Int16(69),
+                "isMetric" : false,
+                "intensity" : Int16(1),
+                "myUserId" : "",
+                "password" : "1234",
+                "weight" : Float(200.0)
+            ] as [String : Any]
+            
+            let client1 = User(data: data1, entity: entity!, insertInto: context)
+            
+            let client2 = User(data: data2, entity: entity!, insertInto: context)
+            var clients:[User] = [client1, client2]
+            
+            vc.clients.append(client1)
+            vc.clients.append(client2)
+            print(vc.clients)
+            
+        }
     }
-    */
 
 }
 
-
-extension Notification.Name {
-    static let AccessTokenReceivedNotification = Notification.Name("AccessTokenReceived")
-    static let UserIdReceivedNotification = Notification.Name("UserIdReceived")
-    static let UserDiariesReceivedNotification = Notification.Name("UserDiariesReceived")
-    
-    
-}

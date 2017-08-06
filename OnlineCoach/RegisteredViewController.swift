@@ -15,7 +15,7 @@ class RegisteredViewController: UIViewController {
     
     
     @IBOutlet weak var youRegisteredLabel: UILabel!
-    var data:[String:Any]?
+    var data:[String:Any]!
     var user:User!
     
     override func viewDidLoad() {
@@ -41,7 +41,14 @@ class RegisteredViewController: UIViewController {
         print(user.description)
         
         navigationItem.backBarButtonItem?.title = "Goals"
-            
+        
+        // Log user to database
+       
+        
+        
+        
+        
+        
             
         appDelegate.saveContext()
         

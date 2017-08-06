@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Get Foods for the first time, because they will not change
         getFoods()
-
+        
+                
         
         return true
     }

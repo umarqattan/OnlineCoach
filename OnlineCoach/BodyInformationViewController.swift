@@ -25,7 +25,7 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     
     
     var unitSwitchHasChanged:Bool = false
-    var data:[String:Any]?
+    var data:[String:Any]!
     let datePickerView:UIDatePicker = UIDatePicker()
     var age:Int16!
     
@@ -210,11 +210,11 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "GoalsInformationViewControllerSegue" {
             
             let vc = segue.destination as? GoalsInformationViewController
-            data?["weight"] = Float(weightField.text!)
-            data?["height"] = heightField.text
-            data?["age"] = age
-            data?["unit"] = unitSwitch.isOn ? "English" : "Metric"
-            data?["birthDate"] = ageField.text
+            
+            data["height"] = Int16(heightField.text!)
+            data["weight"] = Float(weightField.text!)
+            data["isMetric"] = unitSwitch.isOn ? false : true
+            data["birthdate"] = ageField.text!
             vc?.data = data
         }
     

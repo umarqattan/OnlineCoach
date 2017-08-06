@@ -17,7 +17,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     
-    @IBOutlet weak var emailAddressField: UITextField!
+    
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var roleSwitch: UISwitch!
     @IBOutlet weak var nextButton: UIButton!
@@ -26,10 +26,6 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     var data:[String:Any]?
     var foods:[[String:Any]]?
     var theFoods:[Food] = []
-    
-    
-    
-    
     var roleSwitchHasChanged:Bool = false
 
     
@@ -42,8 +38,6 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
         
         
         setupUI()
-        
-        
         
         
         
@@ -70,7 +64,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     func setupUI() {
         firstNameField.delegate = self
         lastNameField.delegate = self
-        emailAddressField.delegate = self
+        
         phoneNumberField.delegate = self
         nextButton.isEnabled = false
     
@@ -79,7 +73,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     func setupAccessibility() {
         firstNameField.accessibilityIdentifier = "firstNameField"
         lastNameField.accessibilityIdentifier = "lastNameField"
-        emailAddressField.accessibilityIdentifier = "emailAddressField"
+        
         phoneNumberField.accessibilityIdentifier = "phoneNumberField"
         roleSwitch.accessibilityIdentifier = "roleSwitch"
         nextButton.accessibilityIdentifier = "nextButton"
@@ -87,7 +81,7 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func enableNextButton() {
-        if firstNameField.text != nil && lastNameField != nil && emailAddressField.text != nil && phoneNumberField.text != nil {
+        if firstNameField.text != nil && lastNameField != nil && phoneNumberField.text != nil {
             nextButton.isEnabled = true
         }
     }
@@ -95,13 +89,8 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
     // UITextFieldDelegate methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        
         textField.resignFirstResponder()
-        
         enableNextButton()
-        
-        
-        
         return true
         
     }
@@ -155,16 +144,14 @@ class UserInformationViewController: UIViewController, UITextFieldDelegate {
             data = [
                 "firstName" : firstNameField.text ?? "",
                 "lastName" : lastNameField.text ?? "",
-                "age" : Int16(0),
-                "birthDate" : "",
-                "emailAddress" : emailAddressField.text ?? "",
+                "birthdate" : "",
+                "emailAddress" : "",
                 "phoneNumber" : phoneNumberField.text ?? "",
                 "isCoach" : roleSwitch.isOn ? true : false,
-                "isClient" : roleSwitch.isOn ? false : true,
-                "weight" : Float(0),
-                "height" : "",
-                "unit" : "Metric",
-                "goal" : "Shred"
+                "height" : 0,
+                "isMetric" : false,
+                "intensity" : 0,
+                "myUserId" : ""
             ]
             
             vc?.data = data
