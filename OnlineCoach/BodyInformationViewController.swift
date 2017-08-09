@@ -101,7 +101,7 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: selector methods
     
-    func doneDatePicker(_ sender:UIBarButtonItem) {
+    @objc func doneDatePicker(_ sender:UIBarButtonItem) {
         
         let dateFormatter = DateFormatter()
         
@@ -115,12 +115,12 @@ class BodyInformationViewController: UIViewController, UITextFieldDelegate {
         ageField.endEditing(true)
     }
     
-    func cancelDatePicker(_ sender:UIBarButtonItem) {
+    @objc func cancelDatePicker(_ sender:UIBarButtonItem) {
         ageField.text = ""
         ageField.endEditing(true)
     }
     
-    func datePickerValueChanged(_ sender:UIDatePicker) {
+    @objc func datePickerValueChanged(_ sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateStyle = DateFormatter.Style.medium

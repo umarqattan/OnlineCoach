@@ -1,5 +1,5 @@
 //
-//  FoodDiariesViewController.swift
+//  FoodDiaryViewController.swift
 //  OnlineCoach
 //
 //  Created by Umar Qattan on 7/18/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class FoodDiariesViewController: UIViewController {
+class FoodDiaryViewController: UIViewController {
 
     var foods:[Food] = []
     

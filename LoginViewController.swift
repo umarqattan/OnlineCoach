@@ -109,7 +109,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Step 3
-    func welcomeCoachReceivedNotification(_ notification: NSNotification) {
+    @objc func welcomeCoachReceivedNotification(_ notification: NSNotification) {
         
         DispatchQueue.main.async {
             
@@ -120,7 +120,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     // Step 2
-    func userIdReceivedNotification(_ notification: NSNotification) {
+    @objc func userIdReceivedNotification(_ notification: NSNotification) {
         let userInfo = notification.userInfo as! [String : Bool]
         
         DispatchQueue.main.async {
@@ -147,7 +147,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Step 1
-    func accessTokenReceivedNotification(_ notification: NSNotification) {
+    @objc func accessTokenReceivedNotification(_ notification: NSNotification) {
         
         
         
@@ -387,7 +387,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: UITextFieldDelegate protocol methods
     
-    func textFieldDidChange(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         
         if (usernameField.text?.characters.count)! > 0 && (passwordField.text?.characters.count)! > 0  {
             loginButton.isEnabled = true
@@ -461,7 +461,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let client1 = User(data: data1, entity: entity!, insertInto: context)
             
             let client2 = User(data: data2, entity: entity!, insertInto: context)
-            var clients:[User] = [client1, client2]
             
             vc.clients.append(client1)
             vc.clients.append(client2)

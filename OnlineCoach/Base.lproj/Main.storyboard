@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -123,7 +131,7 @@
             <objects>
                 <navigationController id="p8C-0l-a4Z" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rAY-Qn-zqp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -285,7 +293,7 @@
         <!--Workouts-->
         <scene sceneID="zky-Mw-9Re">
             <objects>
-                <viewController id="RN1-Gd-58c" customClass="WorkoutsViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RN1-Gd-58c" customClass="ExerciseDiaryViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gK5-Yk-ATC"/>
                         <viewControllerLayoutGuide type="bottom" id="mRj-aZ-ffW"/>
@@ -312,7 +320,7 @@
         <!--Food Diary-->
         <scene sceneID="NMl-iE-CtN">
             <objects>
-                <viewController id="Zg6-ky-Vqd" customClass="FoodDiariesViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zg6-ky-Vqd" customClass="FoodDiaryViewController" customModule="OnlineCoach" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QAZ-4u-4za"/>
                         <viewControllerLayoutGuide type="bottom" id="z9y-GJ-mz0"/>
@@ -612,7 +620,7 @@
             <objects>
                 <navigationController id="gqr-cZ-9uY" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wfv-Tc-Kff">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -720,7 +728,7 @@
                 <navigationController id="fyH-I3-zcY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Food Diary" image="icons8-Vegan Food-32" selectedImage="icons8-Vegan Food-32" id="xkp-VH-Orq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jNr-8W-8Hv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -737,7 +745,7 @@
                 <navigationController id="1hO-f4-xmh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="icons8-Settings-32" selectedImage="icons8-Settings-32" id="ek1-ra-fdN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vmi-HE-NB4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -779,7 +787,7 @@
                 <navigationController id="JDO-SV-dPG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workouts" image="icons8-Dumbbell-32" selectedImage="icons8-Dumbbell-32" id="rMG-jU-Q4G"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aX1-4A-40E">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1222,6 +1230,6 @@
         <image name="icons8-Vegan Food-32" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XVL-ne-OXt"/>
+        <segue reference="eaw-sY-eXH"/>
     </inferredMetricsTieBreakers>
 </document>

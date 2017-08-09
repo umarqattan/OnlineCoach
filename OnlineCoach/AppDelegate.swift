@@ -6,6 +6,17 @@
 //  Copyright © 2017 Umar Qattan. All rights reserved.
 //
 
+/***
+ TODO: Edit how a user logs in, for some reason whenever a user logs out, the dismiss() method overlays extra views onto the login screen
+ 
+     [] 1. Add logout functionality
+     [] 2. Replace stub users with real users from Coach's clients
+     [] 3. Add FoodDiaryViewController -> SearchFoodDetailViewController -> [+] Add button -> Dismiss SearchFoodDetailViewController and append food to FoodDiaryViewController
+     [] 4. Add WorkoutDiaryViewController -> SearchExerciseViewController -> [+] Add button -> SearchExerciseDetailViewController -> Dismiss SearchExerciseDetailViewController and append exercise to WorkoutDiaryViewController
+ 
+ ***/
+
+
 import UIKit
 import CoreData
 

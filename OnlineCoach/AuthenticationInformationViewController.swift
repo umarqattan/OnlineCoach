@@ -26,8 +26,6 @@ class AuthenticationInformationViewController: UIViewController, UITextFieldDele
         
         setupAccessibility()
         setupUI()
-        
-        
     }
     
     
@@ -83,7 +81,7 @@ class AuthenticationInformationViewController: UIViewController, UITextFieldDele
     }
     
     
-    func userAlreadyExistsNotification(_ notification:NSNotification) {
+    @objc func userAlreadyExistsNotification(_ notification:NSNotification) {
         let userInfo = notification.userInfo as! [String:Bool]
         
         
@@ -100,9 +98,7 @@ class AuthenticationInformationViewController: UIViewController, UITextFieldDele
                 self.nextButton.isEnabled = true
                 self.checkImageView.image = UIImage(named: "icons8-Ok-32")
             }
-            
         }
-        
     }
     
     func checkIfUserExists() {
@@ -121,7 +117,7 @@ class AuthenticationInformationViewController: UIViewController, UITextFieldDele
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                print(error)
+                
             } else {
                 let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
                 
@@ -171,7 +167,7 @@ class AuthenticationInformationViewController: UIViewController, UITextFieldDele
                 //print(error)
             } else {
                 //let httpResponse = response as? HTTPURLResponse
-                let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
+                //let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
 
                 DispatchQueue.main.async {
                     
@@ -202,7 +198,7 @@ class AuthenticationInformationViewController: UIViewController, UITextFieldDele
     
     // MARK: UITextFieldDelegate helper protocol methods
     
-    func textFieldDidChange(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         
         if (emailAddressField.text?.characters.count)! > 0 && (passwordField.text?.characters.count)! > 0 && secondPasswordField.text == passwordField.text {
             nextButton.isEnabled = true
@@ -210,18 +206,14 @@ class AuthenticationInformationViewController: UIViewController, UITextFieldDele
         } else {
             nextButton.isEnabled = false
         }
-        
-        
     }
     
     // MARK: UITextFieldDelegate Protocol methods
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        
+
         textField.resignFirstResponder()
 
-        
     }
     
     

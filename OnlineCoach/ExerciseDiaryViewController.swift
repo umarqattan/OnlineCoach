@@ -1,5 +1,5 @@
 //
-//  WorkoutsViewController.swift
+//  ExerciseDiaryViewController.swift
 //  OnlineCoach
 //
 //  Created by Umar Qattan on 7/18/17.
@@ -9,7 +9,7 @@
 
 import UIKit
 
-class WorkoutsViewController: UIViewController {
+class ExerciseDiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
