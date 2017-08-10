@@ -83,19 +83,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let foodDiaryEntries = firstClient.diary.foods
         let exerciseDiaryEntries = firstClient.diary.exercises
         DispatchQueue.main.async {
-            
-            
-           
-            
+
             for food in foodDiaryEntries {
                 self.clientsDiaries += ("\n" + food.description())
             }
-            
             for exercise in exerciseDiaryEntries {
                 self.clientsDiaries += ("\n" + exercise.description())
             }
-            
-            
             print(self.clientsDiaries)
             self.activityIndicator.stopAnimating()
             
@@ -140,18 +134,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 print("WELCOME CLIENT!")
                 // TODO segue to client's diary
             }
-            
-            
-            
         }
     }
     
     // Step 1
     @objc func accessTokenReceivedNotification(_ notification: NSNotification) {
-        
-        
-        
-        
+
         let userInfo = notification.userInfo as! [String: String]
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.userIdReceivedNotification(_ :)), name: .UserIdReceivedNotification, object: nil)
         
@@ -159,6 +147,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             
             self.accessToken = userInfo["access_token"]
+            
+            // Begin Access Token for current user
+            (UIApplication.shared.delegate as! AppDelegate).accessToken = self.accessToken
+            
+            // End Access Token for current user
             self.tokenType = userInfo["token_type"]
             self.getCoach(from: self.accessToken, tokenType: self.tokenType)
             
@@ -217,12 +210,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else {
                 
                 let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
-                
                 let accessToken = (jsonObject as! [String:Any])["access_token"] as! String
                 let tokenType = (jsonObject as! [String:Any])["token_type"] as! String
                 DispatchQueue.main.async {
-                    
-                    
                     let userInfo:[String:String] = ["access_token" : accessToken, "token_type": tokenType]
                     NotificationCenter.default.post(name: .AccessTokenReceivedNotification, object: nil, userInfo: userInfo)
                 }
@@ -254,21 +244,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else {
                 
                 let jsonObject = try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
-                
-                
+        
                 DispatchQueue.main.async {
-                    //let clientUserId = ((jsonObject! as! [Any])[0] as! [String:Any])["clientUserId"] as! String
-                    
                     
                     let object = jsonObject! as! [String:Any]
                     print("object = \(object)")
                     
+                    let isCoach = object["isCoach"] as! Bool
                     
-                   let isCoach = object["isCoach"] as! Bool
-                    
-                    
-                    
-
                     let userInfo = ["isCoach" : isCoach]
                     NotificationCenter.default.post(name: .UserIdReceivedNotification, object: nil, userInfo: userInfo)
                     
@@ -280,9 +263,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
 
     func getClient(from accessToken:String, tokenType:String) {
-        
-        
-        
+
         let clientHeaders = [
             "authorization" : "\(tokenType.capitalized) \(accessToken)",
             "cache-control" : "no-cache"
@@ -421,6 +402,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CoachClientsViewControllerSegue" {
             
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
             let nav = segue.destination as! UINavigationController
             let vc = nav.viewControllers.first as! CoachClientsViewController
             

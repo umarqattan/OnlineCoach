@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var accessToken:String!
+    
     var foods:[Food] = []
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -36,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Get Foods for the first time, because they will not change
         getFoods()
+        
         
                 
         

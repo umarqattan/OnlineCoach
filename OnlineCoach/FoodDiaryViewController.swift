@@ -18,7 +18,6 @@ class FoodDiaryViewController: UIViewController {
         
         navigationItem.title = "Food Diary"
         
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -37,6 +36,8 @@ class FoodDiaryViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: UIBarButtonItem) {
+        
+        (UIApplication.shared.delegate as! AppDelegate).accessToken = nil
         view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         
     }
